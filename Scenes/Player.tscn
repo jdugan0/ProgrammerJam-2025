@@ -1,18 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddjwefcttragw"]
+[gd_scene load_steps=7 format=3 uid="uid://ddjwefcttragw"]
 
 [ext_resource type="Script" uid="uid://dnjngptuwiqso" path="res://scripts/Movement.cs" id="1_rpqav"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qbkls"]
-size = Vector2(100, 100)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rpqav"]
-size = Vector2(20, 20)
+[ext_resource type="Texture2D" uid="uid://r056lasweqhh" path="res://art/player_simple.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbkls"]
-size = Vector2(100, 100)
+size = Vector2(60, 60)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(60, 0, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ixxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gntrk")
+}],
+"loop": true,
+"name": &"SIDE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dewec")
+}],
+"loop": true,
+"name": &"TOP",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+scale = Vector2(2, 2)
 script = ExtResource("1_rpqav")
+sprite = NodePath("AnimatedSprite2D")
 topDownSpeed = 350.0
 sideSpeed = 400.0
 jumpHeight = 300.0
@@ -25,14 +49,12 @@ friction = 3000.0
 coyoteTime = 0.05
 jumpBuffer = 0.05
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_qbkls")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-modulate = Color(0.0941176, 0.411765, 0.580392, 1)
-position = Vector2(0, -37.5)
-scale = Vector2(2.45, 1)
-texture = SubResource("PlaceholderTexture2D_rpqav")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.99387, 1)
 shape = SubResource("RectangleShape2D_qbkls")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_5ixxa")
+animation = &"SIDE"

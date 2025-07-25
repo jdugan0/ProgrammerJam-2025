@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Data;
 
 public partial class Movement : CharacterBody2D
 {
@@ -10,6 +9,8 @@ public partial class Movement : CharacterBody2D
         TOP
     }
     public MovementState movementState = MovementState.SIDE;
+
+    [Export] AnimatedSprite2D sprite;
 
     // top down constants:
     [Export] public float topDownSpeed = 200f;
@@ -55,9 +56,11 @@ public partial class Movement : CharacterBody2D
         switch (movementState)
         {
             case MovementState.SIDE:
+                sprite.Play("SIDE");
                 MovementStateSide(delta);
                 break;
             case MovementState.TOP:
+                sprite.Play("TOP");
                 MovementStateTop(delta);
                 break;
             default:
@@ -136,6 +139,7 @@ public partial class Movement : CharacterBody2D
             v.Y += gravity * (float)delta;
             if (v.Y > maxFallSpeed) v.Y = maxFallSpeed;
         }
+        Rotation = 0;
         // cut velocity for variable jump height
         if (!Input.IsActionPressed("UP") && v.Y < 0)
         {
@@ -145,11 +149,11 @@ public partial class Movement : CharacterBody2D
         {
             if (direction == 1)
             {
-                Rotation = Mathf.Pi / 2;
+                sprite.FlipH = false;
             }
             else
             {
-                Rotation = -Mathf.Pi / 2;
+                sprite.FlipH = true;
             }
         }
         Velocity = v;
@@ -161,7 +165,7 @@ public partial class Movement : CharacterBody2D
         Velocity = inputDirection * topDownSpeed;
         if (inputDirection.Length() > 0)
         {
-            float angle = inputDirection.Angle() + Mathf.Pi / 2;
+            float angle = inputDirection.Angle();
             Rotation = angle;
         }
         MoveAndSlide();
