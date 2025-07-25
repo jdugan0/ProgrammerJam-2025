@@ -32,6 +32,8 @@ public partial class Movement : CharacterBody2D
 
     [Export] private float pushForce = 15;
 
+    [Export] private float maxImpulse = 100f;
+
     [Export] Shape2D topDownShape;
     [Export] Shape2D sideShape;
 
@@ -66,6 +68,10 @@ public partial class Movement : CharacterBody2D
                 {
                     Vector2 pushDir = -n;            // you → collider
                     Vector2 impulse = pushDir * intoBox * pushForce * dt;
+                    if (impulse.Length() > maxImpulse)
+                    {
+                        impulse = impulse.Normalized() * maxImpulse;
+                    }
 
                     if (!rb.TestMove(rb.GlobalTransform, impulse * dt))
                     {
