@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddjwefcttragw"]
+[gd_scene load_steps=9 format=3 uid="uid://ddjwefcttragw"]
 
 [ext_resource type="Script" uid="uid://dnjngptuwiqso" path="res://scripts/Movement.cs" id="1_rpqav"]
 [ext_resource type="Texture2D" uid="uid://r056lasweqhh" path="res://art/player_simple.png" id="2_kyqiw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
+size = Vector2(43.265, 54.055)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gntrk"]
+size = Vector2(38.737, 22.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbkls"]
-size = Vector2(60, 60)
+size = Vector2(38.7375, 22.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
 atlas = ExtResource("2_kyqiw")
@@ -33,7 +39,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "colObject")]
 scale = Vector2(2, 2)
 script = ExtResource("1_rpqav")
 sprite = NodePath("AnimatedSprite2D")
@@ -48,8 +54,12 @@ jumpCutMultiplier = 0.8
 friction = 3000.0
 coyoteTime = 0.05
 jumpBuffer = 0.05
+topDownShape = SubResource("RectangleShape2D_kyqiw")
+sideShape = SubResource("RectangleShape2D_gntrk")
+colObject = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.250001, 0.25)
 scale = Vector2(0.99387, 1)
 shape = SubResource("RectangleShape2D_qbkls")
 
@@ -57,4 +67,4 @@ shape = SubResource("RectangleShape2D_qbkls")
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_5ixxa")
-animation = &"SIDE"
+animation = &"TOP"

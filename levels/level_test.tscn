@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkqwtr4rnmqrm"]
+[gd_scene load_steps=5 format=3 uid="uid://dkqwtr4rnmqrm"]
 
 [ext_resource type="PackedScene" uid="uid://ddjwefcttragw" path="res://Scenes/Player.tscn" id="1_iho50"]
+[ext_resource type="Script" uid="uid://b76f3u0s67v4y" path="res://levels/GameManager.cs" id="2_3wh16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iho50"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wh16"]
 size = Vector2(100, 100)
 
 [node name="LevelTest" type="Node2D"]
@@ -17,3 +21,17 @@ scale = Vector2(16.48, 0.508785)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_iho50")
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("player") groups=["GameManager"]]
+script = ExtResource("2_3wh16")
+player = NodePath("../Player")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["pushable"]]
+mass = 0.5
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 8.279
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" groups=["pushable"]]
+position = Vector2(422, -9)
+shape = SubResource("RectangleShape2D_3wh16")
