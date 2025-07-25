@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkpyr5ik1k64u"]
+
+[ext_resource type="Script" uid="uid://bk5qhbshcp8qc" path="res://Managers/ParticleManager/ParticleManager.cs" id="1_tq835"]
+
+[sub_resource type="Curve" id="Curve_te423"]
+_data = [Vector2(0, 1), 0.0, -0.224775, 0, 0, Vector2(1, 0), -1.72002, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tq5qt"]
+curve = SubResource("Curve_te423")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_35ku0"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 75.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("CurveTexture_tq5qt")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ihc67"]
+size = Vector2(4, 4)
+
+[node name="ParticleManager" type="Node" node_paths=PackedStringArray("gpuParticles2D")]
+script = ExtResource("1_tq835")
+gpuParticles2D = [NodePath("GPUParticles2D")]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_35ku0")
+texture = SubResource("PlaceholderTexture2D_ihc67")
+lifetime = 4.0
+one_shot = true
+explosiveness = 1.0
