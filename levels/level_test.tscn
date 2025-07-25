@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkqwtr4rnmqrm"]
+[gd_scene load_steps=5 format=3 uid="uid://dkqwtr4rnmqrm"]
 
 [ext_resource type="PackedScene" uid="uid://ddjwefcttragw" path="res://Scenes/Player.tscn" id="1_iho50"]
+[ext_resource type="Script" uid="uid://b76f3u0s67v4y" path="res://levels/GameManager.cs" id="2_3wh16"]
+[ext_resource type="PackedScene" uid="uid://bos0q0t4ne508" path="res://Scenes/PhysicsObject.tscn" id="3_4w0vo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iho50"]
 size = Vector2(100, 100)
@@ -17,3 +19,9 @@ scale = Vector2(16.48, 0.508785)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_iho50")
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("player") groups=["GameManager"]]
+script = ExtResource("2_3wh16")
+player = NodePath("../Player")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_4w0vo")]
