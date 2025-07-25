@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bos0q0t4ne508"]
+
+[ext_resource type="Script" uid="uid://tgpsytnyrs4s" path="res://scripts/PhysicsObject.cs" id="1_4mq0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wh16"]
+size = Vector2(100, 100)
+
+[node name="PhysicsObject" type="RigidBody2D" groups=["pushable"]]
+mass = 0.5
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 8.279
+script = ExtResource("1_4mq0a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["pushable"]]
+shape = SubResource("RectangleShape2D_3wh16")
