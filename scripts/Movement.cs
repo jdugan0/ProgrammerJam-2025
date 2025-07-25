@@ -8,7 +8,10 @@ public partial class Movement : CharacterBody2D
         SIDE,
         TOP
     }
-    [Export] public MovementState movementState = MovementState.SIDE;
+    public MovementState movementState = MovementState.TOP;
+
+    // top down constants:
+    [Export] public float topDownSpeed = 200f;
     public override void _Ready()
     {
 
@@ -35,6 +38,13 @@ public partial class Movement : CharacterBody2D
     }
     public void MovementStateTop(double delta)
     {
-        
+        Vector2 inputDirection = Input.GetVector("LEFT", "RIGHT", "UP", "DOWN");
+        Velocity = inputDirection * topDownSpeed;
+        if (inputDirection.Length() > 0)
+        {
+            float angle = inputDirection.Angle() + Mathf.Pi / 2;
+            Rotation = angle;
+        }
+        MoveAndSlide();
     }
 }

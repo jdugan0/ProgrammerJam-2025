@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddjwefcttragw"]
+
+[ext_resource type="Script" uid="uid://dnjngptuwiqso" path="res://scripts/Movement.cs" id="1_rpqav"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qbkls"]
+size = Vector2(100, 100)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rpqav"]
+size = Vector2(20, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbkls"]
+size = Vector2(100, 100)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_rpqav")
+topDownSpeed = 350.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_qbkls")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0.0941176, 0.411765, 0.580392, 1)
+position = Vector2(0, -37.5)
+scale = Vector2(2.45, 1)
+texture = SubResource("PlaceholderTexture2D_rpqav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qbkls")
