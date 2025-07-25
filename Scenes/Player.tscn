@@ -14,6 +14,16 @@ size = Vector2(100, 100)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_rpqav")
 topDownSpeed = 350.0
+sideSpeed = 400.0
+jumpHeight = 300.0
+accel = 4000.0
+airAccel = 1500.0
+drag = 0.01
+gravity = 1399.96
+jumpCutMultiplier = 0.8
+friction = 3000.0
+coyoteTime = 0.05
+jumpBuffer = 0.05
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_qbkls")
