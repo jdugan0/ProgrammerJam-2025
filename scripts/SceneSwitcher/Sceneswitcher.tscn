@@ -25,5 +25,6 @@ scene = ExtResource("5_6i3um")
 metadata/_custom_type_script = "uid://bfs1qfiehecbn"
 
 [node name="Sceneswitcher" type="Node"]
+process_mode = 3
 script = ExtResource("1_388wc")
 scenes = Array[Object]([SubResource("Resource_ykfg0"), SubResource("Resource_ja1x2"), SubResource("Resource_sg0go")])

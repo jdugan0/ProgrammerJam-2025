@@ -32,5 +32,6 @@ name = "jump"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
 [node name="Audiomanager" type="Node"]
+process_mode = 3
 script = ExtResource("1_ulbmk")
 sounds = Array[Object]([SubResource("Resource_8b0fc"), SubResource("Resource_on1l4")])

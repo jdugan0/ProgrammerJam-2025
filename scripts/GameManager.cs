@@ -20,8 +20,22 @@ public partial class GameManager : Node
         }
         return player.GetMovementState();
     }
-    public void EndLevel()
+    public override void _Process(double delta)
+    {
+        if (Input.IsActionJustPressed("PAUSE"))
+        {
+            Pause();
+        }
+    }
+
+    public void RestartLevel()
     {
         SceneSwitcher.instance.SwitchScene(currentLevel);
+    }
+
+    public void Pause()
+    {
+        GetTree().Paused = !GetTree().Paused;
+        ((CanvasLayer)GetTree().GetNodesInGroup("PauseMenu")[0]).Visible = !((CanvasLayer)GetTree().GetNodesInGroup("PauseMenu")[0]).Visible;
     }
 }
