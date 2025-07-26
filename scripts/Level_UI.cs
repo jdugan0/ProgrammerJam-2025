@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Level_UI : Node2D
+public partial class Level_UI : Control
 {
 	[Export] public string[] levels;
 
@@ -18,6 +18,10 @@ public partial class Level_UI : Node2D
 
 	public void ChooseLevel(int level)
 	{
-		SceneSwitcher.instance.SwitchScene(levels[level-1]);
+		SceneSwitcher.instance.SwitchScene(levels[level - 1]);
+	}
+	public void Back()
+	{
+		SceneSwitcher.instance.SwitchScene("MainMenu");
 	}
 }

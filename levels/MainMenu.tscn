@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://uieeikclunvc"]
+[gd_scene load_steps=4 format=3 uid="uid://uieeikclunvc"]
 
 [ext_resource type="Script" uid="uid://du44l6tqdrnlb" path="res://scripts/MainMenu.cs" id="1_oiv87"]
+[ext_resource type="Texture2D" uid="uid://ci8eo3210lw34" path="res://art/space.png" id="2_17qdo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wp8n"]
+texture = ExtResource("2_17qdo")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +14,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oiv87")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8wp8n")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -29,7 +42,7 @@ theme_override_constants/separation = 150
 [node name="Levels" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 131
-text = "Levels...?"
+text = "Levels"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
