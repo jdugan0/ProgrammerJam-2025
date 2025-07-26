@@ -1,7 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmpg0wseyww2d"]
+[gd_scene load_steps=7 format=3 uid="uid://cmpg0wseyww2d"]
 
 [ext_resource type="Script" uid="uid://b1vafheoyuvi4" path="res://scripts/SceneSwitcher/SceneSwitcher.cs" id="1_388wc"]
+[ext_resource type="Script" uid="uid://bfs1qfiehecbn" path="res://scripts/SceneSwitcher/SceneResource.cs" id="2_dare8"]
+[ext_resource type="PackedScene" uid="uid://uieeikclunvc" path="res://levels/MainMenu.tscn" id="2_ykfg0"]
+[ext_resource type="PackedScene" uid="uid://dkqwtr4rnmqrm" path="res://levels/level_test.tscn" id="3_ja1x2"]
+
+[sub_resource type="Resource" id="Resource_ykfg0"]
+script = ExtResource("2_dare8")
+sceneName = "MainMenu"
+scene = ExtResource("2_ykfg0")
+metadata/_custom_type_script = "uid://bfs1qfiehecbn"
+
+[sub_resource type="Resource" id="Resource_ja1x2"]
+script = ExtResource("2_dare8")
+sceneName = "level_test"
+scene = ExtResource("3_ja1x2")
+metadata/_custom_type_script = "uid://bfs1qfiehecbn"
 
 [node name="Sceneswitcher" type="Node"]
 script = ExtResource("1_388wc")
-scenes = []
+scenes = Array[Object]([SubResource("Resource_ykfg0"), SubResource("Resource_ja1x2")])

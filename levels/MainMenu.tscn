@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://uieeikclunvc"]
+
+[ext_resource type="Script" uid="uid://du44l6tqdrnlb" path="res://scripts/MainMenu.cs" id="1_oiv87"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oiv87")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.5
+offset_top = -432.0
+offset_right = 135.5
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
+
+[node name="Levels" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 131
+text = "Levels...?"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 131
+text = "Options"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 131
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Levels" to="." method="Levels"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="Options"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="Quit"]
