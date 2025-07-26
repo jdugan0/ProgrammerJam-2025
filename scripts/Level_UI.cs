@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Level_UI : Control
+public partial class Level_UI : Node2D
 {
 	[Export] public string[] levels;
 

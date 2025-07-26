@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://ddjwefcttragw" path="res://Scenes/Player.tscn" id="1_io78d"]
 [ext_resource type="Texture2D" uid="uid://deksw0y5eqxrb" path="res://art/walls_simple_1_export_1.png" id="2_lpdyh"]
-[ext_resource type="PackedScene" path="res://Scenes/Pit.tscn" id="3_4qgah"]
+[ext_resource type="PackedScene" uid="uid://3n2xf8ewrpl5" path="res://Scenes/Pit.tscn" id="3_4qgah"]
 [ext_resource type="Texture2D" uid="uid://bjrlkux2xtt4g" path="res://art/background_wall_base.png" id="3_le2cb"]
 [ext_resource type="Texture2D" uid="uid://3vx82dynmqsb" path="res://art/wall_hole.png" id="3_lpdyh"]
-[ext_resource type="PackedScene" path="res://Scenes/Spike.tscn" id="5_181nm"]
+[ext_resource type="PackedScene" uid="uid://df07veye605v4" path="res://Scenes/Spike.tscn" id="5_181nm"]
 [ext_resource type="Texture2D" uid="uid://dhqiichu88o2c" path="res://art/wall_decor.png" id="7_pvsi8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwceb"]
@@ -128,16 +128,3 @@ z_index = -1
 position = Vector2(36, 51)
 tile_map_data = PackedByteArray("AAD8/wEABgAAAAAAAAD8/wIABgAAAAEAAAD8/wMABgAAAAIAAAD9/wEABgABAAAAAAD9/wIABgABAAEAAAD+/wEABgACAAAAAAD+/wIABgACAAEAAAD+/wMABgACAAIAAAD//wIABgADAAEAAAD//wMABgADAAIAAAAAAAIABgAEAAEAAAAAAAMABgAEAAIAAAAAAAQABAAAAAAAAQAAAAUAAAACAAMAAAAAAAYAAAAAAAIAAAAAAAcAAAAAAAIAAAAAAAgAAAABAAIAAAABAAEABgAFAAAAAAABAAQABAAAAAAAAQABAAUAAAACAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAACAAAAAAACAP//AwAAAAAAAAACAAAAAwAAAAEAAAACAAEAAwAAAAIAAAACAAQABAAAAAAAAQACAAUAAAABAAAAAAACAAYAAAAAAAAAAAACAAcAAAABAAAAAAACAAgAAAAAAAAAAAADAP//AwABAAAAAAADAAAAAgAAAAAAAQADAAEAAgAAAAAAAQADAAIAAwABAAMAAAADAAQABAAAAAAAAQADAAUAAAACAAEAAAADAAYAAAAAAAAAAAADAAcAAAACAAAAAAADAAgAAAAAAAAAAAAEAP//AwACAAAAAAAEAAAAAgAAAAAAAQAEAAEAAgAAAAAAAQAEAAIAAwACAAMAAAAEAAUAAAACAAAAAAAEAAYAAAABAAAAAAAEAAcAAAABAAAAAAAEAAgAAAAAAAAAAAAFAP//AwADAAAAAAAFAAAAAwADAAEAAAAFAAEAAwADAAIAAAAFAAIAAwADAAMAAAAFAAUAAAAAAAAAAAAFAAYAAAACAAAAAAAFAAcAAAACAAEAAAAFAAgAAAAAAAAAAAAGAP//AQAAAAAAAAAGAAAAAQAAAAEAAAAGAAUAAAABAAEAAAAGAAYAAAAAAAEAAAAGAAcAAAACAAAAAAAGAAgAAAABAAAAAAAHAP//AQABAAAAAAAHAAAAAQABAAEAAAAHAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAgAAAACAAEAAAAIAP//AQACAAAAAAAIAAAAAQACAAEAAAAIAAEAAwAAAAAAAAAIAAIAAwAAAAEAAAAIAAMAAwAAAAIAAAAIAAQAAwAAAAMAAAAIAAYAAAAAAAAAAAAIAAcAAAABAAAAAAAIAAgAAAACAAEAAAAJAP//AQADAAAAAAAJAAAAAQADAAEAAAAJAAEAAwABAAAAAAAJAAIAAgAAAAAAAQAJAAMAAgAAAAAAAQAJAAQAAwABAAMAAAAJAAUAAAACAAAAAAAJAAcAAAACAAEAAAAJAAgAAAACAAEAAAAKAP//AQAEAAAAAAAKAAAAAQAEAAEAAAAKAAEAAwACAAAAAAAKAAIAAgAAAAAAAQAKAAMAAgAAAAAAAQAKAAQAAwACAAMAAAAKAAUAAAAAAAAAAAAKAAcAAAACAAAAAAAKAAgAAAACAAEAAAALAP//AQAFAAAAAAALAAAAAQAFAAEAAAALAAEAAwADAAAAAAALAAIAAwADAAEAAAALAAMAAwADAAIAAAALAAQAAwADAAMAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAgAAAACAAEAAAAMAP//AQAGAAAAAAAMAAAAAQAGAAEAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAAMAAgAAAACAAAAAAANAP//AQAHAAAAAAANAAAAAQAHAAEAAAANAAUAAAAAAAAAAAANAAYAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAUAAAABAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAUAAAAAAAMAAAAPAAYAAAAAAAIAAAAPAAcAAAAAAAIAAAAPAAgAAAABAAMAAAA=")
 tile_set = SubResource("TileSet_4em1c")
-
-[connection signal="body_entered" from="TileMapLayer/Pit" to="TileMapLayer/Pit" method="OnCol"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@43400" to="TileMapLayer/@Area2D@43400" method="OnCol"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@43401" to="TileMapLayer/@Area2D@43401" method="OnCol"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@43402" to="TileMapLayer/@Area2D@43402" method="OnCol"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@43403" to="TileMapLayer/@Area2D@43403" method="OnCol"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@43404" to="TileMapLayer/@Area2D@43404" method="OnCol"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@43405" to="TileMapLayer/@Area2D@43405" method="OnCol"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@43406" to="TileMapLayer/@Area2D@43406" method="OnCol"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@43407" to="TileMapLayer/@Area2D@43407" method="OnCol"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@43408" to="TileMapLayer/@Area2D@43408" method="OnCol"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@43409" to="TileMapLayer/@Area2D@43409" method="OnCol"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@43410" to="TileMapLayer/@Area2D@43410" method="OnCol"]

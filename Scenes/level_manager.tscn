@@ -1,7 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi8t0ppyd4qxn"]
-
-[ext_resource type="Script" path="res://scripts/LevelManager.cs" id="1_f6wcy"]
+[gd_scene format=3 uid="uid://bi8t0ppyd4qxn"]
 
 [node name="Level Manager" type="Node"]
-script = ExtResource("1_f6wcy")
-unlockedLevel = null
