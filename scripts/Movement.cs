@@ -54,6 +54,22 @@ public partial class Movement : CharacterBody2D
         return movementState;
     }
 
+    private void CheckForHazard(float dt)
+    {
+        for (int i = 0; i < GetSlideCollisionCount(); i++)
+        {
+            var col = GetSlideCollision(i);
+            if (col.GetCollider() is Area2D c && c.IsInGroup("hazardTopDown") && movementState == MovementState.TOP)
+            {
+                QueueFree();
+            }
+            if (col.GetCollider() is Area2D c1 && c1.IsInGroup("hazardSide") && movementState == MovementState.SIDE)
+            {
+                QueueFree();
+            }
+        }
+    }
+
     private void PushRigidBodies(float dt, Vector2 preVel)
     {
         for (int i = 0; i < GetSlideCollisionCount(); i++)
