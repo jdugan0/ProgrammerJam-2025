@@ -43,6 +43,7 @@ public partial class Movement : CharacterBody2D
     float coyoteTimer = 0;
     float jumpTimer = 0;
     bool jumpFlag = false;
+    public bool noSwap = false;
 
     public override void _Ready()
     {
@@ -108,7 +109,7 @@ public partial class Movement : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        if (Input.IsActionJustPressed("SWITCH"))
+        if (Input.IsActionJustPressed("SWITCH") && !noSwap)
         {
             if (movementState == MovementState.SIDE)
             {
