@@ -8,7 +8,7 @@ public partial class PhysicsObject : RigidBody2D
     {
         if (gravity)
         {
-            if (((GameManager)GetTree().GetNodesInGroup("GameManager")[0]).GetMovementState() == Movement.MovementState.SIDE)
+            if (GameManager.instance.GetMovementState() == Movement.MovementState.SIDE)
             {
                 GravityScale = 5.0f;
             }
