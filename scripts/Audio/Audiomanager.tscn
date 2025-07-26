@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://d3df3pqxnto64"]
+[gd_scene load_steps=8 format=4 uid="uid://d3df3pqxnto64"]
 
 [ext_resource type="Script" uid="uid://bgxrlc5jnr4u" path="res://scripts/Audio/AudioManager.cs" id="1_ulbmk"]
 [ext_resource type="Script" uid="uid://007myadtw53h" path="res://scripts/Audio/Sound.cs" id="2_8b0fc"]
@@ -30,23 +30,6 @@ volume = 0.0
 name = "move"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
-[sub_resource type="Animation" id="Animation_q7sym"]
-resource_name = "volume"
-
-[sub_resource type="Animation" id="Animation_subo3"]
-length = 0.001
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7mvwt"]
-_data = {
-&"RESET": SubResource("Animation_subo3"),
-&"volume": SubResource("Animation_q7sym")
-}
-
 [node name="Audiomanager" type="Node"]
 script = ExtResource("1_ulbmk")
 sounds = Array[Object]([SubResource("Resource_7mvwt"), SubResource("Resource_on1l4")])
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_7mvwt")
-}
