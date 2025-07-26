@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkqwtr4rnmqrm"]
+[gd_scene load_steps=8 format=3 uid="uid://dkqwtr4rnmqrm"]
 
 [ext_resource type="PackedScene" uid="uid://ddjwefcttragw" path="res://Scenes/Player.tscn" id="1_iho50"]
 [ext_resource type="PackedScene" uid="uid://drmxd2de6bhfh" path="res://Scenes/PhysicsObjectGravity.tscn" id="3_eu8vo"]
 [ext_resource type="PackedScene" uid="uid://c5hc4d50c077x" path="res://Scenes/PhysicsObjectNoGravity.tscn" id="4_5yd65"]
 [ext_resource type="PackedScene" uid="uid://83x0jeriuvn3" path="res://Scenes/NoSwap.tscn" id="5_5yd65"]
 [ext_resource type="PackedScene" uid="uid://rxe7kc5dmt1x" path="res://Scenes/LevelComplete.tscn" id="5_y0s4v"]
+[ext_resource type="PackedScene" uid="uid://3n2xf8ewrpl5" path="res://Scenes/Pit.tscn" id="6_y0s4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iho50"]
 size = Vector2(100, 100)
@@ -32,3 +33,6 @@ scale = Vector2(-7.74546, 4.00926)
 
 [node name="LevelComplete" parent="." instance=ExtResource("5_y0s4v")]
 position = Vector2(684, 225)
+
+[node name="Pit" parent="." instance=ExtResource("6_y0s4v")]
+position = Vector2(448, 109)

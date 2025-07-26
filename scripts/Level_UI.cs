@@ -19,6 +19,7 @@ public partial class Level_UI : Control
 	public void ChooseLevel(int level)
 	{
 		SceneSwitcher.instance.SwitchScene(levels[level - 1]);
+		GameManager.instance.currentLevel = levels[level - 1];
 	}
 	public void Back()
 	{
