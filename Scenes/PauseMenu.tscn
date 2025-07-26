@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq8dwd2ddlih6"]
+
+[ext_resource type="Script" uid="uid://d06xnrfwchdyf" path="res://scripts/PauseMenu.cs" id="1_lj4oq"]
+
+[node name="PauseMenu" type="CanvasLayer" groups=["PauseMenu"]]
+process_mode = 3
+visible = false
+script = ExtResource("1_lj4oq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -277.5
+offset_right = 272.0
+offset_bottom = 277.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.5
+offset_top = -221.5
+offset_right = 244.5
+offset_bottom = 221.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 205
+
+[node name="Button" type="Button" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 81
+text = "RESUME"
+
+[node name="Button2" type="Button" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 81
+text = "MAIN MENU"
+
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Button" to="." method="Resume"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Button2" to="." method="MainMenu"]

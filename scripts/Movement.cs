@@ -88,11 +88,18 @@ public partial class Movement : CharacterBody2D
         }
     }
 
-
+    public override void _Process(double delta)
+    {
+        if (Input.IsActionJustPressed("RESET"))
+        {
+            GameManager.instance.RestartLevel();
+        }
+    }
 
 
     public override void _PhysicsProcess(double delta)
     {
+
         if (Input.IsActionJustPressed("SWITCH") && !noSwap)
         {
             if (movementState == MovementState.SIDE)
