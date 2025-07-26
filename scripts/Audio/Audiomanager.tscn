@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://o6ykbkk22kjh" path="res://sound/move.wav" id="4_8b0fc"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_subo3"]
+random_pitch = 1.1
 random_volume_offset_db = 0.1
 streams_count = 1
 stream_0/stream = ExtResource("4_8b0fc")
@@ -18,6 +19,7 @@ name = "move"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8b0fc"]
+random_pitch = 1.1
 random_volume_offset_db = 0.1
 streams_count = 1
 stream_0/stream = ExtResource("3_8b0fc")

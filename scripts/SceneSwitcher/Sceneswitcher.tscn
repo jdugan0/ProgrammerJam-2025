@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bfs1qfiehecbn" path="res://scripts/SceneSwitcher/SceneResource.cs" id="2_dare8"]
 [ext_resource type="PackedScene" uid="uid://uieeikclunvc" path="res://levels/MainMenu.tscn" id="2_ykfg0"]
 [ext_resource type="PackedScene" uid="uid://dkqwtr4rnmqrm" path="res://levels/level_test.tscn" id="3_ja1x2"]
-[ext_resource type="PackedScene" uid="uid://1r47t5ioq3cf" path="res://levels/level_UI.tscn" id="5_6i3um"]
+[ext_resource type="PackedScene" uid="uid://ciexgcu2b17ov" path="res://Scenes/level_UI.tscn" id="5_6i3um"]
 
 [sub_resource type="Resource" id="Resource_ykfg0"]
 script = ExtResource("2_dare8")
