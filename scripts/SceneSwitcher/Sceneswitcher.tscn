@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmpg0wseyww2d"]
+[gd_scene load_steps=16 format=3 uid="uid://cmpg0wseyww2d"]
 
 [ext_resource type="Script" uid="uid://b1vafheoyuvi4" path="res://scripts/SceneSwitcher/SceneSwitcher.cs" id="1_388wc"]
 [ext_resource type="Script" uid="uid://bfs1qfiehecbn" path="res://scripts/SceneSwitcher/SceneResource.cs" id="2_dare8"]
 [ext_resource type="PackedScene" uid="uid://uieeikclunvc" path="res://levels/MainMenu.tscn" id="2_ykfg0"]
 [ext_resource type="PackedScene" uid="uid://ddkgonei6t6re" path="res://levels/level_1.tscn" id="4_6i3um"]
-[ext_resource type="PackedScene" uid="uid://ciexgcu2b17ov" path="res://Scenes/level_UI.tscn" id="5_6i3um"]
+[ext_resource type="Script" uid="uid://dmp7ud4q7pnlo" path="res://scripts/Level_UI.cs" id="5_jjhwt"]
+[ext_resource type="Texture2D" uid="uid://ci8eo3210lw34" path="res://art/space.png" id="6_mxliv"]
+[ext_resource type="Texture2D" uid="uid://cxpqs4amvry4s" path="res://art/buttons/level1.png" id="7_bp7pt"]
+[ext_resource type="Texture2D" uid="uid://gnucd4yvensl" path="res://art/buttons/level2.png" id="8_cc2p8"]
+[ext_resource type="Texture2D" uid="uid://b4eaeermphgp7" path="res://art/buttons/level3.png" id="9_sfb2b"]
+[ext_resource type="Texture2D" uid="uid://doakhs85kn5ec" path="res://art/buttons/level4.png" id="10_by55e"]
+[ext_resource type="Texture2D" uid="uid://dldt14vmxlr5s" path="res://art/buttons/level5.png" id="11_bbydv"]
 
 [sub_resource type="Resource" id="Resource_ykfg0"]
 script = ExtResource("2_dare8")
@@ -18,10 +24,23 @@ sceneName = "level_1"
 scene = ExtResource("4_6i3um")
 metadata/_custom_type_script = "uid://bfs1qfiehecbn"
 
+[sub_resource type="PackedScene" id="PackedScene_a847n"]
+_bundled = {
+"conn_count": 5,
+"conns": PackedInt32Array(1073741835, 1073741834, 52, 51, 2, 1, 29, 0, 1073741837, 1073741836, 54, 53, 2, 1, 30, 0, 1073741839, 1073741838, 56, 55, 2, 1, 31, 0, 1073741841, 1073741840, 58, 57, 2, 1, 32, 0, 1073741843, 1073741842, 60, 59, 2, 1, 33, 0),
+"editable_instances": [],
+"names": PackedStringArray("Level UI", "Node2D", "script", "levels", "Sprite2D", "Sprite2D", "scale", "texture", "centered", "VBoxContainer", "VBoxContainer", "offset_left", "offset_top", "offset_right", "offset_bottom", "scale", "theme_override_constants/separation", "Game Title", "Label", "layout_mode", "theme_override_font_sizes/font_size", "text", "Level Select", "Label", "layout_mode", "theme_override_font_sizes/font_size", "text", "HBoxContainer", "HBoxContainer", "layout_mode", "theme_override_constants/separation", "Level 1", "TextureButton", "layout_mode", "texture_normal", "Level 2", "TextureButton", "layout_mode", "texture_normal", "Level 3", "TextureButton", "layout_mode", "texture_normal", "Level 4", "TextureButton", "layout_mode", "texture_normal", "Level 5", "TextureButton", "layout_mode", "texture_normal", "ChooseLevel", "pressed", "ChooseLevel", "pressed", "ChooseLevel", "pressed", "ChooseLevel", "pressed", "ChooseLevel", "pressed"),
+"node_count": 11,
+"node_paths": [NodePath("."), NodePath("."), NodePath("./VBoxContainer"), NodePath("./VBoxContainer"), NodePath("./VBoxContainer"), NodePath("./VBoxContainer/HBoxContainer"), NodePath("./VBoxContainer/HBoxContainer"), NodePath("./VBoxContainer/HBoxContainer"), NodePath("./VBoxContainer/HBoxContainer"), NodePath("./VBoxContainer/HBoxContainer"), NodePath("."), NodePath("VBoxContainer/HBoxContainer/Level 1"), NodePath("."), NodePath("VBoxContainer/HBoxContainer/Level 2"), NodePath("."), NodePath("VBoxContainer/HBoxContainer/Level 3"), NodePath("."), NodePath("VBoxContainer/HBoxContainer/Level 4"), NodePath("."), NodePath("VBoxContainer/HBoxContainer/Level 5")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 5, 4, -1, 3, 6, 2, 7, 3, 8, 4, 0, 1073741825, 0, 10, 9, -1, 6, 11, 5, 12, 6, 13, 7, 14, 8, 15, 9, 16, 10, 0, 1073741826, 0, 18, 17, -1, 3, 19, 11, 20, 12, 21, 13, 0, 1073741827, 0, 23, 22, -1, 3, 24, 14, 25, 15, 26, 16, 0, 1073741828, 0, 28, 27, -1, 2, 29, 17, 30, 18, 0, 1073741829, 0, 32, 31, -1, 2, 33, 19, 34, 20, 0, 1073741830, 0, 36, 35, -1, 2, 37, 21, 38, 22, 0, 1073741831, 0, 40, 39, -1, 2, 41, 23, 42, 24, 0, 1073741832, 0, 44, 43, -1, 2, 45, 25, 46, 26, 0, 1073741833, 0, 48, 47, -1, 2, 49, 27, 50, 28, 0),
+"variants": [ExtResource("5_jjhwt"), PackedStringArray("level_1"), Vector2(0.765, 0.765), ExtResource("6_mxliv"), false, 283.0, 136.0, 987.0, 529.0, Vector2(2, 2), 50, 2, 80, "[GAME TITLE]", 2, 45, "Level Select", 2, 26, 2, ExtResource("7_bp7pt"), 2, ExtResource("8_cc2p8"), 2, ExtResource("9_sfb2b"), 2, ExtResource("10_by55e"), 2, ExtResource("11_bbydv"), 1, 2, 3, 4, 5],
+"version": 3
+}
+
 [sub_resource type="Resource" id="Resource_sg0go"]
 script = ExtResource("2_dare8")
 sceneName = "level_manager"
-scene = ExtResource("5_6i3um")
+scene = SubResource("PackedScene_a847n")
 metadata/_custom_type_script = "uid://bfs1qfiehecbn"
 
 [node name="Sceneswitcher" type="Node"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ciexgcu2b17ov"]
+[gd_scene load_steps=8 format=3 uid="uid://c2s047onkuntv"]
 
 [ext_resource type="Script" uid="uid://dmp7ud4q7pnlo" path="res://scripts/Level_UI.cs" id="1_7oh8h"]
 [ext_resource type="Texture2D" uid="uid://ci8eo3210lw34" path="res://art/space.png" id="2_uijer"]
