@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://1r47t5ioq3cf"]
+[gd_scene load_steps=10 format=3 uid="uid://1r47t5ioq3cf"]
 
 [ext_resource type="Script" uid="uid://dmp7ud4q7pnlo" path="res://scripts/Level_UI.cs" id="1_7m8s1"]
 [ext_resource type="Texture2D" uid="uid://ci8eo3210lw34" path="res://art/space.png" id="2_7mqey"]
 [ext_resource type="Texture2D" uid="uid://cxpqs4amvry4s" path="res://art/buttons/level1.png" id="3_2cx7g"]
 [ext_resource type="Texture2D" uid="uid://gnucd4yvensl" path="res://art/buttons/level2.png" id="4_5vydq"]
+[ext_resource type="Script" uid="uid://c8hhpvsmvpquu" path="res://scripts/LevelButton.cs" id="4_7mqey"]
 [ext_resource type="Texture2D" uid="uid://b4eaeermphgp7" path="res://art/buttons/level3.png" id="5_fq8ca"]
 [ext_resource type="Texture2D" uid="uid://doakhs85kn5ec" path="res://art/buttons/level4.png" id="6_ir0r8"]
 [ext_resource type="Texture2D" uid="uid://dldt14vmxlr5s" path="res://art/buttons/level5.png" id="7_fl4ws"]
@@ -60,25 +61,39 @@ text = "Level Select"
 layout_mode = 2
 theme_override_constants/separation = 26
 
-[node name="Level 1" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+[node name="Level 1" type="TextureButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("level_UI")]
 layout_mode = 2
 texture_normal = ExtResource("3_2cx7g")
+script = ExtResource("4_7mqey")
+level_UI = NodePath("../../..")
 
-[node name="Level 2" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+[node name="Level 2" type="TextureButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("level_UI")]
 layout_mode = 2
 texture_normal = ExtResource("4_5vydq")
+script = ExtResource("4_7mqey")
+levelID = 2
+level_UI = NodePath("../../..")
 
-[node name="Level 3" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+[node name="Level 3" type="TextureButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("level_UI")]
 layout_mode = 2
 texture_normal = ExtResource("5_fq8ca")
+script = ExtResource("4_7mqey")
+levelID = 3
+level_UI = NodePath("../../..")
 
-[node name="Level 4" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+[node name="Level 4" type="TextureButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("level_UI")]
 layout_mode = 2
 texture_normal = ExtResource("6_ir0r8")
+script = ExtResource("4_7mqey")
+levelID = 4
+level_UI = NodePath("../../..")
 
-[node name="Level 5" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+[node name="Level 5" type="TextureButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("level_UI")]
 layout_mode = 2
 texture_normal = ExtResource("7_fl4ws")
+script = ExtResource("4_7mqey")
+levelID = 5
+level_UI = NodePath("../../..")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -91,8 +106,9 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 126
 text = "BACK"
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level 1" to="." method="ChooseLevel" binds= [1]]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level 3" to="." method="ChooseLevel"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level 4" to="." method="ChooseLevel"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level 5" to="." method="ChooseLevel"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level 1" to="VBoxContainer/HBoxContainer/Level 1" method="OnPress"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level 2" to="VBoxContainer/HBoxContainer/Level 2" method="OnPress"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level 3" to="VBoxContainer/HBoxContainer/Level 3" method="OnPress"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level 4" to="VBoxContainer/HBoxContainer/Level 4" method="OnPress"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level 5" to="VBoxContainer/HBoxContainer/Level 5" method="OnPress"]
 [connection signal="pressed" from="Button" to="." method="Back"]

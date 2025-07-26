@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://rxe7kc5dmt1x"]
+
+[ext_resource type="Script" uid="uid://63ydsgraopbq" path="res://scripts/LevelComplete.cs" id="1_s5v0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlhux"]
+size = Vector2(120, 120)
+
+[node name="LevelComplete" type="Area2D"]
+script = ExtResource("1_s5v0a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nlhux")
+
+[connection signal="body_entered" from="." to="." method="OnCol"]

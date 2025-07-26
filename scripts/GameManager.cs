@@ -5,6 +5,7 @@ public partial class GameManager : Node
 {
     public static GameManager instance;
     public Movement player;
+    [Export] public int levelUnlocked = 1; 
     public override void _Ready()
     {
         instance = this;
