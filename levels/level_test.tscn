@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkqwtr4rnmqrm"]
+[gd_scene load_steps=7 format=3 uid="uid://dkqwtr4rnmqrm"]
 
 [ext_resource type="PackedScene" uid="uid://ddjwefcttragw" path="res://Scenes/Player.tscn" id="1_iho50"]
 [ext_resource type="Script" uid="uid://b76f3u0s67v4y" path="res://levels/GameManager.cs" id="2_3wh16"]
 [ext_resource type="PackedScene" uid="uid://drmxd2de6bhfh" path="res://Scenes/PhysicsObjectGravity.tscn" id="3_eu8vo"]
 [ext_resource type="PackedScene" uid="uid://c5hc4d50c077x" path="res://Scenes/PhysicsObjectNoGravity.tscn" id="4_5yd65"]
+[ext_resource type="PackedScene" uid="uid://83x0jeriuvn3" path="res://Scenes/NoSwap.tscn" id="5_5yd65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iho50"]
 size = Vector2(100, 100)
@@ -28,3 +29,7 @@ position = Vector2(293, -72)
 
 [node name="PhysicsObject2" parent="." instance=ExtResource("4_5yd65")]
 position = Vector2(-298, -16)
+
+[node name="NoSwap" parent="." instance=ExtResource("5_5yd65")]
+position = Vector2(-578, 109)
+scale = Vector2(-7.74546, 4.00926)
