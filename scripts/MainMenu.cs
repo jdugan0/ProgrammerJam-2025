@@ -5,7 +5,7 @@ public partial class MainMenu : Control
 {
     public void Levels()
     {
-        SceneSwitcher.instance.SwitchScene("level_test");
+        SceneSwitcher.instance.SwitchScene("level_manager");
     }
     public void Quit()
     {
