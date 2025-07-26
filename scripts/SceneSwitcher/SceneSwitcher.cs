@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public partial class SceneSwitcher : Node
 {
 	public static SceneSwitcher instance = null;
-	[Export] public PackedScene[] scenes;
+	[Export] public SceneResource[] scenes;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -14,12 +14,12 @@ public partial class SceneSwitcher : Node
 
 	public void SwitchScene(int loadOrder)
 	{
-		GetTree().ChangeSceneToPacked(scenes[loadOrder]);
+		GetTree().ChangeSceneToPacked(scenes[loadOrder].scene);
 	}
 	
 	public void SwitchScene(string sceneName){
 		GetTree().ChangeSceneToPacked(
-			scenes[Array.FindIndex(scenes, s => s.ResourceName == sceneName)]
+			scenes[Array.FindIndex(scenes, s => s.sceneName == sceneName)].scene
 		);
 	}
 

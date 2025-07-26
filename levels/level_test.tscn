@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkqwtr4rnmqrm"]
+[gd_scene load_steps=7 format=3 uid="uid://dkqwtr4rnmqrm"]
 
 [ext_resource type="PackedScene" uid="uid://ddjwefcttragw" path="res://Scenes/Player.tscn" id="1_iho50"]
+[ext_resource type="Script" uid="uid://hnwii85qddpx" path="res://scripts/GameManager.cs" id="2_3wh16"]
+[ext_resource type="PackedScene" uid="uid://drmxd2de6bhfh" path="res://Scenes/PhysicsObjectGravity.tscn" id="3_eu8vo"]
+[ext_resource type="PackedScene" uid="uid://c5hc4d50c077x" path="res://Scenes/PhysicsObjectNoGravity.tscn" id="4_5yd65"]
+[ext_resource type="PackedScene" uid="uid://83x0jeriuvn3" path="res://Scenes/NoSwap.tscn" id="5_5yd65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iho50"]
 size = Vector2(100, 100)
 
 [node name="LevelTest" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_iho50")]
 
@@ -17,3 +19,17 @@ scale = Vector2(16.48, 0.508785)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_iho50")
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("player") groups=["GameManager"]]
+script = ExtResource("2_3wh16")
+player = NodePath("../Player")
+
+[node name="PhysicsObject" parent="." instance=ExtResource("3_eu8vo")]
+position = Vector2(293, -72)
+
+[node name="PhysicsObject2" parent="." instance=ExtResource("4_5yd65")]
+position = Vector2(-298, -16)
+
+[node name="NoSwap" parent="." instance=ExtResource("5_5yd65")]
+position = Vector2(-578, 109)
+scale = Vector2(-7.74546, 4.00926)

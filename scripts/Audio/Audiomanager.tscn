@@ -1,7 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3df3pqxnto64"]
+[gd_scene load_steps=9 format=3 uid="uid://d3df3pqxnto64"]
 
 [ext_resource type="Script" uid="uid://bgxrlc5jnr4u" path="res://scripts/Audio/AudioManager.cs" id="1_ulbmk"]
+[ext_resource type="Script" uid="uid://007myadtw53h" path="res://scripts/Audio/Sound.cs" id="2_subo3"]
+[ext_resource type="AudioStream" uid="uid://ien2ydwss7so" path="res://sound/jump.wav" id="3_8b0fc"]
+[ext_resource type="AudioStream" uid="uid://o6ykbkk22kjh" path="res://sound/move.wav" id="4_8b0fc"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_subo3"]
+random_volume_offset_db = 0.1
+streams_count = 1
+stream_0/stream = ExtResource("4_8b0fc")
+
+[sub_resource type="Resource" id="Resource_8b0fc"]
+script = ExtResource("2_subo3")
+stream = SubResource("AudioStreamRandomizer_subo3")
+volume = 15.0
+name = "move"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8b0fc"]
+random_volume_offset_db = 0.1
+streams_count = 1
+stream_0/stream = ExtResource("3_8b0fc")
+
+[sub_resource type="Resource" id="Resource_on1l4"]
+script = ExtResource("2_subo3")
+stream = SubResource("AudioStreamRandomizer_8b0fc")
+volume = -1.0
+name = "jump"
+metadata/_custom_type_script = "uid://007myadtw53h"
 
 [node name="Audiomanager" type="Node"]
 script = ExtResource("1_ulbmk")
-sounds = Array[Object]([])
+sounds = Array[Object]([SubResource("Resource_8b0fc"), SubResource("Resource_on1l4")])
