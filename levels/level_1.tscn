@@ -118,7 +118,7 @@ sources/4 = SubResource("TileSetScenesCollectionSource_5ot28")
 sources/1 = SubResource("TileSetAtlasSource_l53as")
 sources/6 = SubResource("TileSetAtlasSource_aerfg")
 
-[node name="TileTest" type="Node2D"]
+[node name="TileTest2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_gwceb")]
 position = Vector2(903, 540)
