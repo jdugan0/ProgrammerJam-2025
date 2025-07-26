@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://3n2xf8ewrpl5"]
+
+[ext_resource type="Script" uid="uid://dtmyk4jfqqsd0" path="res://scripts/Hazard.cs" id="1_2886q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r0ha"]
+size = Vector2(120, 120)
+
+[node name="Pit" type="Area2D"]
+script = ExtResource("1_2886q")
+topDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hazardTopDown"]]
+shape = SubResource("RectangleShape2D_1r0ha")
+
+[connection signal="body_entered" from="." to="." method="OnCol"]

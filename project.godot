@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Sceneswitcher="*res://scripts/SceneSwitcher/Sceneswitcher.tscn"
 ParticleManager="*res://scripts/ParticleManager/ParticleManager.tscn"
 Audiomanager="*res://scripts/Audio/Audiomanager.tscn"
+GameManager="*res://Scenes/game_manager.tscn"
 
 [display]
 
@@ -37,6 +38,7 @@ project/assembly_name="ProgrammerJam"
 
 GameManager=""
 pushable=""
+hazardTopDown=""
 
 [input]
 

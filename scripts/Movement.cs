@@ -47,7 +47,7 @@ public partial class Movement : CharacterBody2D
 
     public override void _Ready()
     {
-
+        GameManager.instance.player = this;
     }
 
     public MovementState GetMovementState()
