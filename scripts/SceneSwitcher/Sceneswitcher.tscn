@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://uieeikclunvc" path="res://levels/MainMenu.tscn" id="2_ykfg0"]
 [ext_resource type="PackedScene" uid="uid://bs062dv7uo8fd" path="res://levels/level_1.tscn" id="4_6i3um"]
 [ext_resource type="PackedScene" uid="uid://1r47t5ioq3cf" path="res://levels/level_UI.tscn" id="5_6i3um"]
-[ext_resource type="PackedScene" uid="uid://fr3qqdaucnor" path="res://levels/level_2.tscn" id="5_sg0go"]
-[ext_resource type="PackedScene" uid="uid://c64ottavus62u" path="res://levels/level_3.tscn" id="7_rtqo1"]
+[ext_resource type="PackedScene" uid="uid://b46o8veks2m6q" path="res://levels/level_2.tscn" id="5_sg0go"]
+[ext_resource type="PackedScene" uid="uid://7sya4v7cj5rk" path="res://levels/level_3.tscn" id="7_rtqo1"]
 
 [sub_resource type="Resource" id="Resource_ykfg0"]
 script = ExtResource("2_dare8")

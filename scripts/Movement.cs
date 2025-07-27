@@ -163,7 +163,7 @@ public partial class Movement : CharacterBody2D
 		if (IsOnFloor() && direction != 0)
 		{
 			if (!AudioManager.instance.isPlaying("move"))
-				AudioManager.instance.PlaySFX(this, "move");
+				AudioManager.instance.PlaySFX("move");
 		}
 		else
 		{
@@ -200,14 +200,14 @@ public partial class Movement : CharacterBody2D
 			}
 			else
 			{
-				AudioManager.instance.PlaySFX(this, "jump");
+				AudioManager.instance.PlaySFX("jump");
 				v.Y = -Mathf.Sqrt(2f * gravity * jumpHeight);
 			}
 		}
 
 		if (IsOnFloor() && jumpFlag)
 		{
-			AudioManager.instance.PlaySFX(this, "jump");
+			AudioManager.instance.PlaySFX("jump");
 			v.Y = -Mathf.Sqrt(2f * gravity * jumpHeight);
 			jumpFlag = false;
 		}
@@ -252,7 +252,7 @@ public partial class Movement : CharacterBody2D
 		if (inputDirection.Length() > 0)
 		{
 			if (!AudioManager.instance.isPlaying("move"))
-				AudioManager.instance.PlaySFX(this, "move");
+				AudioManager.instance.PlaySFX("move");
 		}
 		else
 		{
