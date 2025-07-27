@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://uieeikclunvc"]
+[gd_scene load_steps=10 format=3 uid="uid://uieeikclunvc"]
 
 [ext_resource type="Script" uid="uid://du44l6tqdrnlb" path="res://scripts/MainMenu.cs" id="1_oiv87"]
 [ext_resource type="Texture2D" uid="uid://ci8eo3210lw34" path="res://art/space.png" id="2_17qdo"]
+[ext_resource type="Texture2D" uid="uid://blbspuwud28v8" path="res://art/buttons/menu_options.png" id="3_op5qb"]
+[ext_resource type="Texture2D" uid="uid://bd1djjmf0qh5u" path="res://art/buttons/menu_options_hover.png" id="4_5tiqq"]
+[ext_resource type="Texture2D" uid="uid://dtl8rp2qe8vue" path="res://art/buttons/menu_levels.png" id="5_v2lxj"]
+[ext_resource type="Texture2D" uid="uid://c2vtw3g37xahj" path="res://art/buttons/menu_levels_hover.png" id="6_jppe8"]
+[ext_resource type="Texture2D" uid="uid://i70353qxycir" path="res://art/buttons/menu_quit.png" id="7_oios4"]
+[ext_resource type="Texture2D" uid="uid://dl3s8yrq2s21a" path="res://art/buttons/menu_quit_hover.png" id="8_cssil"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wp8n"]
 texture = ExtResource("2_17qdo")
@@ -24,36 +30,45 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8wp8n")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 339.0
+offset_right = 1437.0
+offset_bottom = 544.0
+theme_override_font_sizes/font_size = 150
+text = "[GAME TITLE]"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -135.5
-offset_top = -432.0
-offset_right = 135.5
-offset_bottom = 432.0
+offset_left = -862.5
+offset_top = 235.0
+offset_right = 862.5
+offset_bottom = 435.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 150
 
-[node name="Levels" type="Button" parent="VBoxContainer"]
+[node name="Options" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 131
-text = "Levels"
+texture_normal = ExtResource("3_op5qb")
+texture_hover = ExtResource("4_5tiqq")
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Levels" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 131
-text = "Options"
+texture_normal = ExtResource("5_v2lxj")
+texture_hover = ExtResource("6_jppe8")
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 131
-text = "Quit"
+texture_normal = ExtResource("7_oios4")
+texture_hover = ExtResource("8_cssil")
 
-[connection signal="pressed" from="VBoxContainer/Levels" to="." method="Levels"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="Options"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="Quit"]
+[connection signal="pressed" from="HBoxContainer/Options" to="." method="Options"]
+[connection signal="pressed" from="HBoxContainer/Levels" to="." method="Levels"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="." method="Quit"]
