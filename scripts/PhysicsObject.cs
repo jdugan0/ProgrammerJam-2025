@@ -3,20 +3,18 @@ using System;
 
 public partial class PhysicsObject : RigidBody2D
 {
-    [Export] bool gravity;
+    [Export] public bool gravity;
+    [Export] public float maxV = 100f;
     public override void _Process(double delta)
     {
         if (gravity)
         {
-            if (GameManager.instance.GetMovementState() == Movement.MovementState.SIDE)
+            if (LinearVelocity.Length() > maxV)
             {
-                GravityScale = 5.0f;
-            }
-            else
-            {
-                GravityScale = 0.0f;
+                LinearVelocity = LinearVelocity.Normalized() * maxV;
             }
         }
     }
+
 
 }

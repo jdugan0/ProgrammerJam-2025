@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://3n2xf8ewrpl5"]
+[gd_scene load_steps=3 format=3 uid="uid://c1crsavphxarl"]
 
 [ext_resource type="Script" uid="uid://dtmyk4jfqqsd0" path="res://scripts/Hazard.cs" id="1_2886q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1r0ha"]
-size = Vector2(120, 120)
+size = Vector2(100, 100)
 
 [node name="Pit" type="Area2D"]
 script = ExtResource("1_2886q")
