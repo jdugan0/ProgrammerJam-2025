@@ -126,7 +126,7 @@ sprite_frames = SubResource("SpriteFrames_5ixxa")
 animation = &"SIDE"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.25, 1.25)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
