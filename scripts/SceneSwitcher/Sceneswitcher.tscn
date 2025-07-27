@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b1vafheoyuvi4" path="res://scripts/SceneSwitcher/SceneSwitcher.cs" id="1_388wc"]
 [ext_resource type="Script" uid="uid://bfs1qfiehecbn" path="res://scripts/SceneSwitcher/SceneResource.cs" id="2_dare8"]
 [ext_resource type="PackedScene" uid="uid://uieeikclunvc" path="res://levels/MainMenu.tscn" id="2_ykfg0"]
-[ext_resource type="PackedScene" uid="uid://dkqwtr4rnmqrm" path="res://levels/level_test.tscn" id="3_ja1x2"]
+[ext_resource type="PackedScene" uid="uid://bs062dv7uo8fd" path="res://levels/level_1.tscn" id="4_6i3um"]
 [ext_resource type="PackedScene" uid="uid://1r47t5ioq3cf" path="res://levels/level_UI.tscn" id="5_6i3um"]
 
 [sub_resource type="Resource" id="Resource_ykfg0"]
@@ -14,8 +14,8 @@ metadata/_custom_type_script = "uid://bfs1qfiehecbn"
 
 [sub_resource type="Resource" id="Resource_ja1x2"]
 script = ExtResource("2_dare8")
-sceneName = "level_test"
-scene = ExtResource("3_ja1x2")
+sceneName = "level_1"
+scene = ExtResource("4_6i3um")
 metadata/_custom_type_script = "uid://bfs1qfiehecbn"
 
 [sub_resource type="Resource" id="Resource_sg0go"]
