@@ -9,10 +9,12 @@ public partial class Hazard : Node
         GD.Print("HI");
         if (GameManager.instance.GetMovementState() == Movement.MovementState.TOP && topDown && node is Movement)
         {
+            node.QueueFree();
             GameManager.instance.RestartLevel();
         }
         if (GameManager.instance.GetMovementState() == Movement.MovementState.SIDE && !topDown && node is Movement)
         {
+            node.QueueFree();
             GameManager.instance.RestartLevel();
         }
     }

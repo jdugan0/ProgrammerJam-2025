@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class PauseMenu : CanvasLayer
 {
@@ -7,10 +8,10 @@ public partial class PauseMenu : CanvasLayer
     {
         GameManager.instance.Pause();
     }
-    public void MainMenu()
+    public async void MainMenu()
     {
         GameManager.instance.Pause();
-        SceneSwitcher.instance.SwitchScene("MainMenu");
+        await SceneSwitcher.instance.SwitchSceneAsyncSlide("MainMenu");
     }
     public void NextLevel()
     {

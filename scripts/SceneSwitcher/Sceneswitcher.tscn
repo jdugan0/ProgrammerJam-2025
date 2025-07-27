@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmpg0wseyww2d"]
+[gd_scene load_steps=10 format=3 uid="uid://cmpg0wseyww2d"]
 
 [ext_resource type="Script" uid="uid://b1vafheoyuvi4" path="res://scripts/SceneSwitcher/SceneSwitcher.cs" id="1_388wc"]
 [ext_resource type="Script" uid="uid://bfs1qfiehecbn" path="res://scripts/SceneSwitcher/SceneResource.cs" id="2_dare8"]
@@ -24,7 +24,23 @@ sceneName = "level_manager"
 scene = ExtResource("5_6i3um")
 metadata/_custom_type_script = "uid://bfs1qfiehecbn"
 
-[node name="Sceneswitcher" type="Node"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6i3um"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Sceneswitcher" type="Node" node_paths=PackedStringArray("fadeRect")]
 process_mode = 3
 script = ExtResource("1_388wc")
 scenes = Array[Object]([SubResource("Resource_ykfg0"), SubResource("Resource_ja1x2"), SubResource("Resource_sg0go")])
+fadeRect = NodePath("CanvasLayer/Panel")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6i3um")
