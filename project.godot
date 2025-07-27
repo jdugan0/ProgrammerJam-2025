@@ -13,7 +13,7 @@ config_version=5
 config/name="ProgrammerJam"
 run/main_scene="uid://uieeikclunvc"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bqo23lyfk2skl"
 
 [autoload]
 
