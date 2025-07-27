@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://f236kfvsycvh"]
+
+[ext_resource type="Texture2D" uid="uid://b1g1epefrf5rt" path="res://art/platforms.png" id="1_rfe1n"]
+
+[node name="Platform Tie" type="Sprite2D"]
+texture = ExtResource("1_rfe1n")
+region_enabled = true
+region_rect = Rect2(311, 130.904, 149.471, 94.701)

@@ -5,7 +5,7 @@ public partial class LevelComplete : Area2D
 {
     public void OnCol(Node2D body)
     {
-        GD.Print("hi");
+        // GD.Print("hi");
         if (body is Movement)
         {
             ((CanvasLayer)GetTree().GetNodesInGroup("WinMenu")[0]).Visible = true;

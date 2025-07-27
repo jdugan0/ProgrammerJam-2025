@@ -45,6 +45,10 @@ public partial class AudioManager : Node
     {
         return PlaySFX(from, sound, 0);
     }
+    public AudioStreamPlayer PlaySFX(string sound)
+    {
+        return PlaySFX(this, sound, 0);
+    }
     public void CancelSFX(string sound)
     {
         if (isPlaying(sound))

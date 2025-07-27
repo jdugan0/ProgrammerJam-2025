@@ -1,16 +1,45 @@
-[gd_scene load_steps=10 format=3 uid="uid://1r47t5ioq3cf"]
+[gd_scene load_steps=24 format=3 uid="uid://1r47t5ioq3cf"]
 
 [ext_resource type="Script" uid="uid://dmp7ud4q7pnlo" path="res://scripts/Level_UI.cs" id="1_7m8s1"]
 [ext_resource type="Texture2D" uid="uid://ci8eo3210lw34" path="res://art/space.png" id="2_7mqey"]
 [ext_resource type="Texture2D" uid="uid://cxpqs4amvry4s" path="res://art/buttons/level1.png" id="3_2cx7g"]
+[ext_resource type="Texture2D" uid="uid://cj2kbg8ax5rb6" path="res://art/menu_text_select_level.png" id="3_ir0r8"]
 [ext_resource type="Texture2D" uid="uid://gnucd4yvensl" path="res://art/buttons/level2.png" id="4_5vydq"]
 [ext_resource type="Script" uid="uid://c8hhpvsmvpquu" path="res://scripts/LevelButton.cs" id="4_7mqey"]
+[ext_resource type="Texture2D" uid="uid://d11bv0of3f4pc" path="res://art/buttons/levels_hover.png" id="4_fq8ca"]
 [ext_resource type="Texture2D" uid="uid://b4eaeermphgp7" path="res://art/buttons/level3.png" id="5_fq8ca"]
+[ext_resource type="Texture2D" uid="uid://d1dookxqtqdck" path="res://art/buttons/level1_disabled.png" id="5_t6kcm"]
 [ext_resource type="Texture2D" uid="uid://doakhs85kn5ec" path="res://art/buttons/level4.png" id="6_ir0r8"]
 [ext_resource type="Texture2D" uid="uid://dldt14vmxlr5s" path="res://art/buttons/level5.png" id="7_fl4ws"]
+[ext_resource type="Texture2D" uid="uid://bqy38qf85nowb" path="res://art/buttons/menu_back.png" id="9_5vydq"]
+[ext_resource type="Texture2D" uid="uid://dhypl7utx07by" path="res://art/buttons/level2_disabled.png" id="9_rvm1o"]
+[ext_resource type="Texture2D" uid="uid://v7d12man5o3t" path="res://art/buttons/menu_back_hover.png" id="10_fq8ca"]
+[ext_resource type="Texture2D" uid="uid://dtp48qrm4dcbx" path="res://art/buttons/level3_disabled.png" id="12_r27n4"]
+[ext_resource type="Texture2D" uid="uid://byytevjejkrqp" path="res://art/buttons/level4_disabled.png" id="15_kt0og"]
+[ext_resource type="Texture2D" uid="uid://bjbts64xvrgjg" path="res://art/buttons/level5_disabled.png" id="18_y6362"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7m8s1"]
 texture = ExtResource("2_7mqey")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm5gr"]
+atlas = ExtResource("4_fq8ca")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b0qa"]
+atlas = ExtResource("4_fq8ca")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6kcm"]
+atlas = ExtResource("4_fq8ca")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fg5p"]
+atlas = ExtResource("4_fq8ca")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvm1o"]
+atlas = ExtResource("4_fq8ca")
+region = Rect2(480, 0, 120, 120)
 
 [node name="Level UI" type="Control"]
 layout_mode = 3
@@ -20,7 +49,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7m8s1")
-levels = PackedStringArray("level_1", "level_2")
+levels = PackedStringArray("level_1", "level_2", "level_3")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -48,14 +77,15 @@ scale = Vector2(2, 2)
 theme_override_constants/separation = 50
 
 [node name="Game Title" type="Label" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "[GAME TITLE]"
 
-[node name="Level Select" type="Label" parent="VBoxContainer"]
+[node name="Level Select" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 45
-text = "Level Select"
+texture = ExtResource("3_ir0r8")
+stretch_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -64,12 +94,16 @@ theme_override_constants/separation = 26
 [node name="Level 1" type="TextureButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("level_UI")]
 layout_mode = 2
 texture_normal = ExtResource("3_2cx7g")
+texture_hover = SubResource("AtlasTexture_tm5gr")
+texture_disabled = ExtResource("5_t6kcm")
 script = ExtResource("4_7mqey")
 level_UI = NodePath("../../..")
 
 [node name="Level 2" type="TextureButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("level_UI")]
 layout_mode = 2
 texture_normal = ExtResource("4_5vydq")
+texture_hover = SubResource("AtlasTexture_6b0qa")
+texture_disabled = ExtResource("9_rvm1o")
 script = ExtResource("4_7mqey")
 levelID = 2
 level_UI = NodePath("../../..")
@@ -77,6 +111,8 @@ level_UI = NodePath("../../..")
 [node name="Level 3" type="TextureButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("level_UI")]
 layout_mode = 2
 texture_normal = ExtResource("5_fq8ca")
+texture_hover = SubResource("AtlasTexture_t6kcm")
+texture_disabled = ExtResource("12_r27n4")
 script = ExtResource("4_7mqey")
 levelID = 3
 level_UI = NodePath("../../..")
@@ -84,6 +120,8 @@ level_UI = NodePath("../../..")
 [node name="Level 4" type="TextureButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("level_UI")]
 layout_mode = 2
 texture_normal = ExtResource("6_ir0r8")
+texture_hover = SubResource("AtlasTexture_6fg5p")
+texture_disabled = ExtResource("15_kt0og")
 script = ExtResource("4_7mqey")
 levelID = 4
 level_UI = NodePath("../../..")
@@ -91,20 +129,24 @@ level_UI = NodePath("../../..")
 [node name="Level 5" type="TextureButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("level_UI")]
 layout_mode = 2
 texture_normal = ExtResource("7_fl4ws")
+texture_hover = SubResource("AtlasTexture_rvm1o")
+texture_disabled = ExtResource("18_y6362")
 script = ExtResource("4_7mqey")
 levelID = 5
 level_UI = NodePath("../../..")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -335.0
-offset_bottom = 180.0
+offset_left = -491.0
+offset_top = 161.0
+offset_right = -91.0
+offset_bottom = 341.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 126
-text = "BACK"
+texture_normal = ExtResource("9_5vydq")
+texture_hover = ExtResource("10_fq8ca")
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level 1" to="VBoxContainer/HBoxContainer/Level 1" method="OnPress"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level 2" to="VBoxContainer/HBoxContainer/Level 2" method="OnPress"]
