@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://r056lasweqhh" path="res://art/player_simple.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
-size = Vector2(43.265, 54.055)
+size = Vector2(38.234, 39.778)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gntrk"]
 size = Vector2(38.737, 22.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbkls"]
-size = Vector2(38.7375, 22.5)
+size = Vector2(38.2344, 39.7775)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
 atlas = ExtResource("2_kyqiw")
@@ -115,7 +115,7 @@ sideShape = SubResource("RectangleShape2D_gntrk")
 colObject = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.250001, 0.25)
+position = Vector2(-0.5, 7.38875)
 scale = Vector2(0.99387, 1)
 shape = SubResource("RectangleShape2D_qbkls")
 

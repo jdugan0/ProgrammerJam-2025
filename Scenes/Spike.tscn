@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://qkxiskg7622i" path="res://art/spikes_pixel.png" id="2_nuopa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1r0ha"]
-size = Vector2(105, 81)
+size = Vector2(120, 55)
 
 [node name="Pit" type="Area2D"]
 script = ExtResource("1_agh12")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hazardTopDown"]]
-position = Vector2(0.5, 19.5)
+position = Vector2(0, 32.5)
 shape = SubResource("RectangleShape2D_1r0ha")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
