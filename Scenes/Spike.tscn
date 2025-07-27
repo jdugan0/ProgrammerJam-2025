@@ -15,6 +15,4 @@ shape = SubResource("RectangleShape2D_1r0ha")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_nuopa")
 
-[node name="Timer" type="Timer" parent="."]
-
 [connection signal="body_entered" from="." to="." method="OnCol"]
