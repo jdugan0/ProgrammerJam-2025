@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://rnqcyw4n3kot"]
+[gd_scene load_steps=2 format=3 uid="uid://c1of5o7yvp434"]
 
 [ext_resource type="Script" uid="uid://b76f3u0s67v4y" path="res://scripts/GameManager.cs" id="1_oj352"]
 
 [node name="GameManager" type="Node" groups=["GameManager"]]
 process_mode = 3
 script = ExtResource("1_oj352")
-levelUnlocked = 3
+levelUnlocked = 5
