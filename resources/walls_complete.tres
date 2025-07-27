@@ -1,0 +1,184 @@
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://b7hm63ulfp8yp"]
+
+[ext_resource type="Texture2D" uid="uid://deksw0y5eqxrb" path="res://art/walls_simple_1_export_1.png" id="1_wo04h"]
+[ext_resource type="Texture2D" uid="uid://bjrlkux2xtt4g" path="res://art/background_wall_base.png" id="2_8j8jl"]
+[ext_resource type="PackedScene" uid="uid://3n2xf8ewrpl5" path="res://Scenes/Pit.tscn" id="3_recvj"]
+[ext_resource type="Texture2D" uid="uid://3vx82dynmqsb" path="res://art/wall_hole.png" id="4_pfckc"]
+[ext_resource type="PackedScene" uid="uid://df07veye605v4" path="res://Scenes/Spike.tscn" id="5_inbqc"]
+[ext_resource type="Texture2D" uid="uid://dhqiichu88o2c" path="res://art/wall_decor.png" id="6_gb1vi"]
+[ext_resource type="Texture2D" uid="uid://drx75rtw26mm3" path="res://art/level_markings.png" id="7_8j8jl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d0dep"]
+texture = ExtResource("1_wo04h")
+texture_region_size = Vector2i(120, 120)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -60, 60, -60, 60, 60, -60, 60)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x7ejc"]
+texture = ExtResource("2_8j8jl")
+texture_region_size = Vector2i(120, 120)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_htnhv"]
+resource_name = "Pit"
+scenes/1/scene = ExtResource("3_recvj")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8wic"]
+texture = ExtResource("4_pfckc")
+texture_region_size = Vector2i(120, 120)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+1:1/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ohqqs"]
+resource_name = "Spike"
+scenes/1/scene = ExtResource("5_inbqc")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rityb"]
+texture = ExtResource("6_gb1vi")
+texture_region_size = Vector2i(120, 120)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_recvj"]
+texture = ExtResource("7_8j8jl")
+texture_region_size = Vector2i(120, 120)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+1:4/0 = 0
+0:3/0 = 0
+0:2/0 = 0
+0:1/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+0:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+0:9/0 = 0
+1:8/0 = 0
+2:7/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+5:9/0 = 0
+5:7/0 = 0
+5:6/0 = 0
+4:6/0 = 0
+3:6/0 = 0
+2:6/0 = 0
+1:7/0 = 0
+1:6/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+4:5/0 = 0
+4:4/0 = 0
+3:4/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:4/0 = 0
+5:5/0 = 0
+3:5/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+5:3/0 = 0
+2:3/0 = 0
+2:2/0 = 0
+2:4/0 = 0
+
+[resource]
+tile_size = Vector2i(120, 120)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_d0dep")
+sources/2 = SubResource("TileSetScenesCollectionSource_htnhv")
+sources/3 = SubResource("TileSetAtlasSource_o8wic")
+sources/4 = SubResource("TileSetScenesCollectionSource_ohqqs")
+sources/1 = SubResource("TileSetAtlasSource_x7ejc")
+sources/6 = SubResource("TileSetAtlasSource_rityb")
+sources/7 = SubResource("TileSetAtlasSource_recvj")
