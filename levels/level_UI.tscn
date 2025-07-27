@@ -49,7 +49,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7m8s1")
-levels = PackedStringArray("level_1", "level_2", "level_3")
+levels = PackedStringArray("level_1", "level_2", "level_3-1", "level_5")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

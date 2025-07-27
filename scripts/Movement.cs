@@ -15,6 +15,8 @@ public partial class Movement : CharacterBody2D
     // top down constants:
     [Export] private float topDownSpeed = 200f;
 
+    public bool killed = false;
+
 
     // side constants:
     [Export] private float sideSpeed = 300f * 1.6f;
@@ -33,6 +35,7 @@ public partial class Movement : CharacterBody2D
     [Export] private float pushForce = 15;
 
     [Export] private float maxImpulse = 100f;
+    bool thudFlag = false;
 
     [Export] Shape2D topDownShape;
     [Export] Shape2D sideShape;
@@ -100,10 +103,13 @@ public partial class Movement : CharacterBody2D
         }
     }
 
-
     public override void _PhysicsProcess(double delta)
     {
-
+        if (killed)
+        {
+            AudioManager.instance.CancelSFX("move");
+            return;
+        }
         if (Input.IsActionJustPressed("SWITCH") && !noSwap)
         {
             AudioManager.instance.PlaySFX("switch");
@@ -145,7 +151,16 @@ public partial class Movement : CharacterBody2D
 
         if (IsOnFloor())
         {
+            if (thudFlag)
+            {
+                AudioManager.instance.PlaySFX(this, "thud");
+                thudFlag = false;
+            }
             coyoteTimer = 0f;
+        }
+        else
+        {
+            thudFlag = true;
         }
 
         float accelActual = IsOnFloor() ? accel : airAccel;
