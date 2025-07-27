@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class Level_UI : Control
 {
@@ -21,8 +22,8 @@ public partial class Level_UI : Control
 	{
 		GameManager.instance.ChooseLevel(level);
 	}
-	public void Back()
+	public async void Back()
 	{
-		SceneSwitcher.instance.SwitchScene("MainMenu");
+		await SceneSwitcher.instance.SwitchSceneAsyncSlide("MainMenu");
 	}
 }

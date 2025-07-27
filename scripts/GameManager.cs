@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class GameManager : Node
 {
@@ -24,22 +25,22 @@ public partial class GameManager : Node
     }
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("PAUSE"))
+        if (Input.IsActionJustPressed("PAUSE") && !((CanvasLayer)GetTree().GetNodesInGroup("WinMenu")[0]).Visible)
         {
             Pause();
         }
     }
 
-    public void RestartLevel()
+    public async void RestartLevel()
     {
-        SceneSwitcher.instance.SwitchScene(currentLevel);
+        await SceneSwitcher.instance.SwitchSceneAsyncSlide(currentLevel);
     }
 
-    public void ChooseLevel(int level)
+    public async void ChooseLevel(int level)
     {
-        SceneSwitcher.instance.SwitchScene(levels[level - 1]);
-		currentLevel = levels[level - 1];
-		currentLevelID = level;
+        await SceneSwitcher.instance.SwitchSceneAsyncSlide(levels[level - 1]);
+        currentLevel = levels[level - 1];
+        currentLevelID = level;
     }
 
     public void NextLevel()
