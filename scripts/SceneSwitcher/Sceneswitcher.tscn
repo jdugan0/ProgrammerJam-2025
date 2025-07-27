@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmpg0wseyww2d"]
+[gd_scene load_steps=12 format=3 uid="uid://cmpg0wseyww2d"]
 
 [ext_resource type="Script" uid="uid://b1vafheoyuvi4" path="res://scripts/SceneSwitcher/SceneSwitcher.cs" id="1_388wc"]
 [ext_resource type="Script" uid="uid://bfs1qfiehecbn" path="res://scripts/SceneSwitcher/SceneResource.cs" id="2_dare8"]
 [ext_resource type="PackedScene" uid="uid://uieeikclunvc" path="res://levels/MainMenu.tscn" id="2_ykfg0"]
 [ext_resource type="PackedScene" uid="uid://dkqwtr4rnmqrm" path="res://levels/level_test.tscn" id="3_ja1x2"]
 [ext_resource type="PackedScene" uid="uid://1r47t5ioq3cf" path="res://levels/level_UI.tscn" id="5_6i3um"]
+[ext_resource type="PackedScene" uid="uid://fr3qqdaucnor" path="res://levels/level_2.tscn" id="5_sg0go"]
 
 [sub_resource type="Resource" id="Resource_ykfg0"]
 script = ExtResource("2_dare8")
@@ -16,6 +17,12 @@ metadata/_custom_type_script = "uid://bfs1qfiehecbn"
 script = ExtResource("2_dare8")
 sceneName = "level_test"
 scene = ExtResource("3_ja1x2")
+metadata/_custom_type_script = "uid://bfs1qfiehecbn"
+
+[sub_resource type="Resource" id="Resource_rtqo1"]
+script = ExtResource("2_dare8")
+sceneName = "level_2"
+scene = ExtResource("5_sg0go")
 metadata/_custom_type_script = "uid://bfs1qfiehecbn"
 
 [sub_resource type="Resource" id="Resource_sg0go"]
@@ -30,7 +37,7 @@ bg_color = Color(0, 0, 0, 1)
 [node name="Sceneswitcher" type="Node" node_paths=PackedStringArray("fadeRect")]
 process_mode = 3
 script = ExtResource("1_388wc")
-scenes = Array[Object]([SubResource("Resource_ykfg0"), SubResource("Resource_ja1x2"), SubResource("Resource_sg0go")])
+scenes = Array[Object]([SubResource("Resource_ykfg0"), SubResource("Resource_ja1x2"), SubResource("Resource_rtqo1"), SubResource("Resource_sg0go")])
 fadeRect = NodePath("CanvasLayer/Panel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

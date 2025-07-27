@@ -15,6 +15,7 @@ public partial class PauseMenu : CanvasLayer
     }
     public void NextLevel()
     {
+        GetTree().Paused = false;
         GameManager.instance.NextLevel();
     }
 }
