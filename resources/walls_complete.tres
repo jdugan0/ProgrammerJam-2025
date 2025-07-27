@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://b7hm63ulfp8yp"]
+[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://b7hm63ulfp8yp"]
 
 [ext_resource type="Texture2D" uid="uid://deksw0y5eqxrb" path="res://art/walls_simple_1_export_1.png" id="1_wo04h"]
 [ext_resource type="Texture2D" uid="uid://bjrlkux2xtt4g" path="res://art/background_wall_base.png" id="2_8j8jl"]
+[ext_resource type="Texture2D" uid="uid://csjbxtk41vgil" path="res://art/instruction_2.png" id="3_gb1vi"]
 [ext_resource type="PackedScene" uid="uid://c1crsavphxarl" path="res://Scenes/Pit.tscn" id="3_recvj"]
 [ext_resource type="Texture2D" uid="uid://3vx82dynmqsb" path="res://art/wall_hole.png" id="4_pfckc"]
 [ext_resource type="PackedScene" uid="uid://blcd63lvr3qhs" path="res://Scenes/Spike.tscn" id="5_inbqc"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://h2vy8egwn6vy" path="res://art/world_tile_set.png" id="6_recvj"]
 [ext_resource type="Texture2D" uid="uid://drx75rtw26mm3" path="res://art/level_markings.png" id="7_8j8jl"]
 [ext_resource type="Texture2D" uid="uid://bk157xse5xhnt" path="res://art/ship_innards.png" id="9_pfckc"]
+[ext_resource type="Texture2D" uid="uid://brxexvqwko8ex" path="res://art/instruction 1.png" id="11_e7ijq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d0dep"]
 texture = ExtResource("1_wo04h")
@@ -57,6 +59,11 @@ texture_region_size = Vector2i(120, 120)
 5:1/0 = 0
 6:1/0 = 0
 7:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1ypo"]
+texture = ExtResource("3_gb1vi")
+texture_region_size = Vector2i(120, 120)
+0:0/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_htnhv"]
 resource_name = "Pit"
@@ -554,6 +561,11 @@ texture_region_size = Vector2i(120, 120)
 19:11/0 = 0
 20:11/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cfbn5"]
+texture = ExtResource("11_e7ijq")
+texture_region_size = Vector2i(120, 120)
+0:0/0 = 0
+
 [resource]
 tile_size = Vector2i(120, 120)
 physics_layer_0/collision_layer = 1
@@ -566,3 +578,5 @@ sources/6 = SubResource("TileSetAtlasSource_rityb")
 sources/7 = SubResource("TileSetAtlasSource_recvj")
 sources/5 = SubResource("TileSetAtlasSource_pfckc")
 sources/8 = SubResource("TileSetAtlasSource_inbqc")
+sources/9 = SubResource("TileSetAtlasSource_cfbn5")
+sources/10 = SubResource("TileSetAtlasSource_u1ypo")
