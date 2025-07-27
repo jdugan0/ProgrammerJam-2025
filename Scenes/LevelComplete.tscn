@@ -1,14 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://rxe7kc5dmt1x"]
+[gd_scene load_steps=5 format=3 uid="uid://rxe7kc5dmt1x"]
 
 [ext_resource type="Script" uid="uid://63ydsgraopbq" path="res://scripts/LevelComplete.cs" id="1_s5v0a"]
+[ext_resource type="Texture2D" uid="uid://dwh2l87o6hdxm" path="res://art/doors.png" id="2_eqxnh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlhux"]
 size = Vector2(120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob4rb"]
+atlas = ExtResource("2_eqxnh")
+region = Rect2(0, 0, 240, 0)
 
 [node name="LevelComplete" type="Area2D"]
 script = ExtResource("1_s5v0a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nlhux")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_ob4rb")
 
 [connection signal="body_entered" from="." to="." method="OnCol"]
