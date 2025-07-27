@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://uieeikclunvc"]
+[gd_scene load_steps=11 format=3 uid="uid://uieeikclunvc"]
 
 [ext_resource type="Script" uid="uid://du44l6tqdrnlb" path="res://scripts/MainMenu.cs" id="1_oiv87"]
 [ext_resource type="Texture2D" uid="uid://ci8eo3210lw34" path="res://art/space.png" id="2_17qdo"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c2vtw3g37xahj" path="res://art/buttons/menu_levels_hover.png" id="6_jppe8"]
 [ext_resource type="Texture2D" uid="uid://i70353qxycir" path="res://art/buttons/menu_quit.png" id="7_oios4"]
 [ext_resource type="Texture2D" uid="uid://dl3s8yrq2s21a" path="res://art/buttons/menu_quit_hover.png" id="8_cssil"]
+[ext_resource type="Texture2D" uid="uid://dy48kuaqj2rl0" path="res://art/buttons/logo.png" id="9_5tiqq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wp8n"]
 texture = ExtResource("2_17qdo")
@@ -29,15 +30,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8wp8n")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 488.0
-offset_top = 339.0
-offset_right = 1437.0
-offset_bottom = 544.0
-theme_override_font_sizes/font_size = 150
-text = "[GAME TITLE]"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -68,6 +60,18 @@ texture_hover = ExtResource("6_jppe8")
 layout_mode = 2
 texture_normal = ExtResource("7_oios4")
 texture_hover = ExtResource("8_cssil")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -894.0
+offset_right = 894.0
+offset_bottom = 628.0
+grow_horizontal = 2
+texture = ExtResource("9_5tiqq")
+stretch_mode = 4
 
 [connection signal="pressed" from="HBoxContainer/Options" to="." method="Options"]
 [connection signal="pressed" from="HBoxContainer/Levels" to="." method="Levels"]

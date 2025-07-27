@@ -13,6 +13,7 @@ public partial class GameManager : Node
     public override void _Ready()
     {
         instance = this;
+        AudioManager.instance.PlaySFX("music");
     }
 
     public Movement.MovementState GetMovementState()

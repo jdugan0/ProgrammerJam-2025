@@ -5,4 +5,3 @@
 [node name="GameManager" type="Node" groups=["GameManager"]]
 process_mode = 3
 script = ExtResource("1_oj352")
-levelUnlocked = 1
