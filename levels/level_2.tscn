@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://fr3qqdaucnor"]
+[gd_scene load_steps=14 format=4 uid="uid://fr3qqdaucnor"]
 
 [ext_resource type="Texture2D" uid="uid://ci8eo3210lw34" path="res://art/space.png" id="1_dfjjl"]
+[ext_resource type="Script" uid="uid://btu2bp3xjtev8" path="res://scripts/ScrollTexture.cs" id="2_at1ld"]
 [ext_resource type="PackedScene" uid="uid://ddjwefcttragw" path="res://Scenes/Player.tscn" id="3_sd18g"]
 [ext_resource type="TileSet" uid="uid://b7hm63ulfp8yp" path="res://resources/walls_complete.tres" id="4_vm7no"]
 [ext_resource type="PackedScene" uid="uid://e8i4w5kls3ae" path="res://Scenes/Platform.tscn" id="5_hbb88"]
@@ -21,11 +22,14 @@ sources/0 = SubResource("TileSetScenesCollectionSource_safpt")
 
 [node name="Level" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." node_paths=PackedStringArray("player")]
 z_index = -20
 texture_repeat = 2
 position = Vector2(1280, 720)
 texture = ExtResource("1_dfjjl")
+script = ExtResource("2_at1ld")
+parallax = 1.0
+player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("3_sd18g")]
 position = Vector2(240, 1095)
@@ -78,59 +82,3 @@ position = Vector2(3780, 420)
 [node name="PauseMenu" parent="." instance=ExtResource("9_at1ld")]
 
 [node name="WinMenu" parent="." instance=ExtResource("11_vm7no")]
-
-[connection signal="body_entered" from="Level/Pit" to="Level/Pit" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51453" to="Level/@Area2D@51453" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51454" to="Level/@Area2D@51454" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51455" to="Level/@Area2D@51455" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51456" to="Level/@Area2D@51456" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51457" to="Level/@Area2D@51457" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51458" to="Level/@Area2D@51458" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51459" to="Level/@Area2D@51459" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51460" to="Level/@Area2D@51460" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51461" to="Level/@Area2D@51461" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51462" to="Level/@Area2D@51462" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51463" to="Level/@Area2D@51463" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51464" to="Level/@Area2D@51464" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51465" to="Level/@Area2D@51465" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51466" to="Level/@Area2D@51466" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51467" to="Level/@Area2D@51467" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51468" to="Level/@Area2D@51468" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51469" to="Level/@Area2D@51469" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51470" to="Level/@Area2D@51470" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51471" to="Level/@Area2D@51471" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51472" to="Level/@Area2D@51472" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51473" to="Level/@Area2D@51473" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51474" to="Level/@Area2D@51474" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51475" to="Level/@Area2D@51475" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51476" to="Level/@Area2D@51476" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51477" to="Level/@Area2D@51477" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51478" to="Level/@Area2D@51478" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51479" to="Level/@Area2D@51479" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51480" to="Level/@Area2D@51480" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51481" to="Level/@Area2D@51481" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51482" to="Level/@Area2D@51482" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51483" to="Level/@Area2D@51483" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51484" to="Level/@Area2D@51484" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51485" to="Level/@Area2D@51485" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51486" to="Level/@Area2D@51486" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51487" to="Level/@Area2D@51487" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@51488" to="Level/@Area2D@51488" method="OnCol"]
-[connection signal="body_entered" from="Spikes/Pit" to="Spikes/Pit" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51489" to="Spikes/@Area2D@51489" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51490" to="Spikes/@Area2D@51490" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51491" to="Spikes/@Area2D@51491" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51492" to="Spikes/@Area2D@51492" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51493" to="Spikes/@Area2D@51493" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51494" to="Spikes/@Area2D@51494" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51495" to="Spikes/@Area2D@51495" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51496" to="Spikes/@Area2D@51496" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51497" to="Spikes/@Area2D@51497" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51498" to="Spikes/@Area2D@51498" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51499" to="Spikes/@Area2D@51499" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51500" to="Spikes/@Area2D@51500" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51501" to="Spikes/@Area2D@51501" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51502" to="Spikes/@Area2D@51502" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51503" to="Spikes/@Area2D@51503" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51504" to="Spikes/@Area2D@51504" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@51505" to="Spikes/@Area2D@51505" method="OnCol"]
