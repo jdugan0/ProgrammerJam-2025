@@ -44,6 +44,7 @@ public partial class Movement : CharacterBody2D
     float jumpTimer = 0;
     bool jumpFlag = false;
     public bool noSwap = false;
+    bool thudFlag = false;
 
     public override void _Ready()
     {
@@ -144,7 +145,16 @@ public partial class Movement : CharacterBody2D
 
         if (IsOnFloor())
         {
+            if (thudFlag)
+            {
+                AudioManager.instance.PlaySFX(this, "thud");
+                thudFlag = false;
+            }
             coyoteTimer = 0f;
+        }
+        else
+        {
+            thudFlag = true;
         }
 
         float accelActual = IsOnFloor() ? accel : airAccel;

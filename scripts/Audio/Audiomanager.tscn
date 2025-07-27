@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3df3pqxnto64"]
+[gd_scene load_steps=15 format=3 uid="uid://d3df3pqxnto64"]
 
 [ext_resource type="Script" uid="uid://bgxrlc5jnr4u" path="res://scripts/Audio/AudioManager.cs" id="1_ulbmk"]
 [ext_resource type="Script" uid="uid://007myadtw53h" path="res://scripts/Audio/Sound.cs" id="2_subo3"]
 [ext_resource type="AudioStream" uid="uid://ien2ydwss7so" path="res://sound/jump.wav" id="3_8b0fc"]
 [ext_resource type="AudioStream" uid="uid://o6ykbkk22kjh" path="res://sound/move.wav" id="4_8b0fc"]
+[ext_resource type="AudioStream" uid="uid://b0qghthfjmbll" path="res://sound/thud.wav" id="5_on1l4"]
+[ext_resource type="AudioStream" uid="uid://box0b0j4u2sei" path="res://sound/push.wav" id="6_q7sym"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_subo3"]
 random_volume_offset_db = 0.1
@@ -29,7 +31,31 @@ volume = -1.0
 name = "jump"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_on1l4"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("5_on1l4")
+
+[sub_resource type="Resource" id="Resource_q7sym"]
+script = ExtResource("2_subo3")
+stream = SubResource("AudioStreamRandomizer_on1l4")
+volume = 0.0
+name = "thud"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7mvwt"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("6_q7sym")
+
+[sub_resource type="Resource" id="Resource_eqkb6"]
+script = ExtResource("2_subo3")
+stream = SubResource("AudioStreamRandomizer_7mvwt")
+volume = 0.0
+name = "push"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
 [node name="Audiomanager" type="Node"]
 process_mode = 3
 script = ExtResource("1_ulbmk")
-sounds = Array[Object]([SubResource("Resource_8b0fc"), SubResource("Resource_on1l4")])
+sounds = Array[Object]([SubResource("Resource_8b0fc"), SubResource("Resource_on1l4"), SubResource("Resource_q7sym"), SubResource("Resource_eqkb6")])
