@@ -35,6 +35,7 @@ public partial class Movement : CharacterBody2D
 	[Export] private float pushForce = 15;
 
 	[Export] private float maxImpulse = 100f;
+	bool thudFlag = false;
 
 	[Export] Shape2D topDownShape;
 	[Export] Shape2D sideShape;
@@ -150,7 +151,16 @@ public partial class Movement : CharacterBody2D
 
 		if (IsOnFloor())
 		{
+			if (thudFlag)
+			{
+				AudioManager.instance.PlaySFX(this, "thud");
+				thudFlag = false;
+			}
 			coyoteTimer = 0f;
+		}
+		else
+		{
+			thudFlag = true;
 		}
 
 		float accelActual = IsOnFloor() ? accel : airAccel;
