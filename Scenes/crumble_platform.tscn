@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://urtdct2r8738"]
+[gd_scene load_steps=9 format=3 uid="uid://urtdct2r8738"]
 
 [ext_resource type="Script" uid="uid://dksnb2yqeqj8b" path="res://scripts/CrumblePlatform.cs" id="1_1puqh"]
 [ext_resource type="Texture2D" uid="uid://b1g1epefrf5rt" path="res://art/platforms.png" id="1_wm0hk"]
+[ext_resource type="AudioStream" uid="uid://nb381xtrdywd" path="res://sound/platform_crumble.mp3" id="3_40kjr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1puqh"]
 size = Vector2(90, 20)
@@ -46,6 +47,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_40kjr"]
 resource_name = "crumble"
@@ -57,7 +70,7 @@ tracks/0/path = NodePath("StaticBody/CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.533333),
+"times": PackedFloat32Array(0, 0.566667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -71,7 +84,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, -2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, -2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, -2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, -2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, -2, -0.25, 0, 0.25, 0, 1500, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.05, 0.0999711, 0.149971, 0.201373, 0.251373, 0.300456, 0.350456, 0.399539, 0.449539, 0.498622, 0.533333, 1.49472)
+"times": PackedFloat32Array(0, 0.05, 0.0999711, 0.149971, 0.201373, 0.251373, 0.300456, 0.350456, 0.399539, 0.449539, 0.498622, 0.566667, 1.49472)
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -84,6 +97,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eovc0"]
@@ -114,5 +139,8 @@ shape = SubResource("RectangleShape2D_40kjr")
 libraries = {
 &"": SubResource("AnimationLibrary_eovc0")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_40kjr")
 
 [connection signal="body_entered" from="." to="." method="do_something"]
