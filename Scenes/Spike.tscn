@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://df07veye605v4"]
+[gd_scene load_steps=4 format=3 uid="uid://blcd63lvr3qhs"]
 
 [ext_resource type="Script" uid="uid://dtmyk4jfqqsd0" path="res://scripts/Hazard.cs" id="1_agh12"]
 [ext_resource type="Texture2D" uid="uid://qkxiskg7622i" path="res://art/spikes_pixel.png" id="2_nuopa"]
@@ -14,5 +14,7 @@ shape = SubResource("RectangleShape2D_1r0ha")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_nuopa")
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="OnCol"]
