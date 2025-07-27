@@ -62,6 +62,10 @@ public partial class Movement : CharacterBody2D
             var col = GetSlideCollision(i);
             if (col.GetCollider() is RigidBody2D rb && rb.IsInGroup("pushable"))
             {
+                if (movementState == MovementState.SIDE && !((PhysicsObject)rb).gravity)
+                {
+                    return;
+                }
                 Vector2 n = col.GetNormal();         // collider → you
                 float intoBox = -preVel.Dot(n);      // positive if moving into collider
 
@@ -111,20 +115,21 @@ public partial class Movement : CharacterBody2D
                 movementState = MovementState.SIDE;
             }
         }
+        Vector2 preVel = Velocity;
         switch (movementState)
         {
             case MovementState.SIDE:
                 MotionMode = MotionModeEnum.Grounded;
+                colObject.Shape = topDownShape;
                 sprite.Play("SIDE");
                 MovementStateSide(delta);
-                colObject.Shape = topDownShape;
+                PushRigidBodies((float)delta, preVel);
                 break;
             case MovementState.TOP:
                 MotionMode = MotionModeEnum.Floating;
                 colObject.Shape = sideShape;
                 sprite.Play("TOP");
                 MovementStateTop(delta);
-                Vector2 preVel = Velocity;
                 MoveAndSlide();
                 PushRigidBodies((float)delta, preVel);
                 break;

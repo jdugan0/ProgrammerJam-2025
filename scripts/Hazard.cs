@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Hazard : Node
+public partial class Hazard : Area2D
 {
     [Export] public bool topDown = false;
     public void OnCol(Node2D node)
@@ -16,6 +16,14 @@ public partial class Hazard : Node
         {
             node.QueueFree();
             GameManager.instance.RestartLevel();
+        }
+    }
+
+    public override void _PhysicsProcess(double delta)
+    {
+        foreach (var node in GetOverlappingBodies())
+        {
+            OnCol(node);
         }
     }
 }
