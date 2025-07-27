@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://fr3qqdaucnor"]
+[gd_scene load_steps=12 format=4 uid="uid://fr3qqdaucnor"]
 
 [ext_resource type="Texture2D" uid="uid://ci8eo3210lw34" path="res://art/space.png" id="1_dfjjl"]
 [ext_resource type="Script" uid="uid://btu2bp3xjtev8" path="res://scripts/ScrollTexture.cs" id="2_at1ld"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://df07veye605v4" path="res://Scenes/Spike.tscn" id="6_wcjpl"]
 [ext_resource type="PackedScene" uid="uid://c5hc4d50c077x" path="res://Scenes/PhysicsObjectNoGravity.tscn" id="7_5orea"]
 [ext_resource type="PackedScene" uid="uid://drmxd2de6bhfh" path="res://Scenes/PhysicsObjectGravity.tscn" id="8_0ourt"]
+[ext_resource type="PackedScene" uid="uid://bq8dwd2ddlih6" path="res://Scenes/PauseMenu.tscn" id="9_at1ld"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_safpt"]
 resource_name = "Spike"
@@ -72,6 +73,8 @@ position = Vector2(3245, 552)
 
 [node name="PhysicsObject3" parent="Objects" instance=ExtResource("8_0ourt")]
 position = Vector2(3279, 448)
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_at1ld")]
 
 [connection signal="body_entered" from="Level/@Area2D@151724" to="Level/@Area2D@151724" method="OnCol"]
 [connection signal="body_entered" from="Level/@Area2D@151725" to="Level/@Area2D@151725" method="OnCol"]
