@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://b2xnfsup5otdx"]
+[gd_scene load_steps=14 format=4 uid="uid://b2xnfsup5otdx"]
 
 [ext_resource type="Texture2D" uid="uid://cbgmu28ylsd87" path="res://art/spacex4.png" id="1_nkn58"]
 [ext_resource type="Script" uid="uid://btu2bp3xjtev8" path="res://scripts/ScrollTexture.cs" id="2_omtue"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://rxe7kc5dmt1x" path="res://Scenes/LevelComplete.tscn" id="9_wnrsi"]
 [ext_resource type="PackedScene" uid="uid://bq8dwd2ddlih6" path="res://Scenes/PauseMenu.tscn" id="10_q18nk"]
 [ext_resource type="PackedScene" uid="uid://d2u47531xwgv5" path="res://Scenes/WinMenu.tscn" id="11_gj5c7"]
+[ext_resource type="PackedScene" path="res://Scenes/door.tscn" id="11_nkn58"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_safpt"]
 resource_name = "Spike"
@@ -20,6 +21,9 @@ tile_size = Vector2i(120, 120)
 sources/0 = SubResource("TileSetScenesCollectionSource_safpt")
 
 [node name="Level" type="Node2D"]
+
+[node name="Door" parent="." instance=ExtResource("11_nkn58")]
+position = Vector2(2845, 602)
 
 [node name="Background" type="Sprite2D" parent="." node_paths=PackedStringArray("player")]
 z_index = -20
@@ -72,3 +76,14 @@ position = Vector2(3780, 420)
 [node name="PauseMenu" parent="." instance=ExtResource("10_q18nk")]
 
 [node name="WinMenu" parent="." instance=ExtResource("11_gj5c7")]
+
+[connection signal="body_entered" from="Level/Pit" to="Level/Pit" method="OnCol"]
+[connection signal="body_entered" from="Level/@Area2D@70094" to="Level/@Area2D@70094" method="OnCol"]
+[connection signal="body_entered" from="Level/@Area2D@70095" to="Level/@Area2D@70095" method="OnCol"]
+[connection signal="body_entered" from="Level/@Area2D@70096" to="Level/@Area2D@70096" method="OnCol"]
+[connection signal="body_entered" from="Spikes/Pit" to="Spikes/Pit" method="OnCol"]
+[connection signal="body_entered" from="Spikes/@Area2D@70097" to="Spikes/@Area2D@70097" method="OnCol"]
+[connection signal="body_entered" from="Spikes/@Area2D@70098" to="Spikes/@Area2D@70098" method="OnCol"]
+[connection signal="body_entered" from="Spikes/@Area2D@70099" to="Spikes/@Area2D@70099" method="OnCol"]
+[connection signal="body_entered" from="Spikes/@Area2D@70100" to="Spikes/@Area2D@70100" method="OnCol"]
+[connection signal="body_entered" from="Spikes/@Area2D@70101" to="Spikes/@Area2D@70101" method="OnCol"]
