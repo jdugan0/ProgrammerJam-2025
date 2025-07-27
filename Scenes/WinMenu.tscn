@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2u47531xwgv5"]
+[gd_scene load_steps=6 format=3 uid="uid://d2u47531xwgv5"]
 
 [ext_resource type="Script" uid="uid://d06xnrfwchdyf" path="res://scripts/PauseMenu.cs" id="1_l763u"]
+[ext_resource type="Texture2D" uid="uid://5wlnvj6qf02w" path="res://art/buttons/menu_menu.png" id="2_0cgja"]
+[ext_resource type="Texture2D" uid="uid://cijcys62m4141" path="res://art/buttons/menu_menu_hover.png" id="3_rnswt"]
+[ext_resource type="Texture2D" uid="uid://c132450kchw28" path="res://art/buttons/menu_next_level.png" id="4_fu86e"]
+[ext_resource type="Texture2D" uid="uid://kmsqus3h4pj3" path="res://art/buttons/menu_next_level_hover.png" id="5_ufayh"]
 
 [node name="WinMenu" type="CanvasLayer" groups=["WinMenu"]]
 process_mode = 3
@@ -36,29 +40,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -244.5
-offset_top = -221.5
-offset_right = 244.5
-offset_bottom = 221.5
+offset_left = -205.0
+offset_top = -225.0
+offset_right = 203.0
+offset_bottom = 218.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 75
+theme_override_constants/separation = 43
+alignment = 1
 
 [node name="Label" type="Label" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 41
 text = "LEVEL COMPLETE!!!"
 horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="Control/Panel/VBoxContainer"]
+[node name="Button2" type="TextureButton" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 81
-text = "MAIN MENU"
+texture_normal = ExtResource("2_0cgja")
+texture_hover = ExtResource("3_rnswt")
 
-[node name="Button3" type="Button" parent="Control/Panel/VBoxContainer"]
+[node name="Button3" type="TextureButton" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 81
-text = "NEXT LEVEL"
+texture_normal = ExtResource("4_fu86e")
+texture_hover = ExtResource("5_ufayh")
 
 [connection signal="pressed" from="Control/Panel/VBoxContainer/Button2" to="." method="MainMenu"]
 [connection signal="pressed" from="Control/Panel/VBoxContainer/Button3" to="." method="NextLevel"]
