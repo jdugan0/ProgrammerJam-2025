@@ -76,14 +76,3 @@ position = Vector2(3780, 420)
 [node name="PauseMenu" parent="." instance=ExtResource("10_q18nk")]
 
 [node name="WinMenu" parent="." instance=ExtResource("11_gj5c7")]
-
-[connection signal="body_entered" from="Level/Pit" to="Level/Pit" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@76739" to="Level/@Area2D@76739" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@76740" to="Level/@Area2D@76740" method="OnCol"]
-[connection signal="body_entered" from="Level/@Area2D@76741" to="Level/@Area2D@76741" method="OnCol"]
-[connection signal="body_entered" from="Spikes/Pit" to="Spikes/Pit" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@76742" to="Spikes/@Area2D@76742" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@76743" to="Spikes/@Area2D@76743" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@76744" to="Spikes/@Area2D@76744" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@76745" to="Spikes/@Area2D@76745" method="OnCol"]
-[connection signal="body_entered" from="Spikes/@Area2D@76746" to="Spikes/@Area2D@76746" method="OnCol"]
