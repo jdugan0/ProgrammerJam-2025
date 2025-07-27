@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkqwtr4rnmqrm"]
+[gd_scene load_steps=10 format=3 uid="uid://dkqwtr4rnmqrm"]
 
 [ext_resource type="PackedScene" uid="uid://ddjwefcttragw" path="res://Scenes/Player.tscn" id="1_iho50"]
 [ext_resource type="PackedScene" uid="uid://drmxd2de6bhfh" path="res://Scenes/PhysicsObjectGravity.tscn" id="3_eu8vo"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://rxe7kc5dmt1x" path="res://Scenes/LevelComplete.tscn" id="5_y0s4v"]
 [ext_resource type="PackedScene" uid="uid://3n2xf8ewrpl5" path="res://Scenes/Pit.tscn" id="6_y0s4v"]
 [ext_resource type="PackedScene" uid="uid://bq8dwd2ddlih6" path="res://Scenes/PauseMenu.tscn" id="7_tt56a"]
+[ext_resource type="PackedScene" uid="uid://cjgcud7wvvj8f" path="res://Scenes/WinMenu.tscn" id="8_sop0g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iho50"]
 size = Vector2(100, 100)
@@ -39,3 +40,5 @@ position = Vector2(684, 225)
 position = Vector2(448, 109)
 
 [node name="PauseMenu" parent="." instance=ExtResource("7_tt56a")]
+
+[node name="WinMenu" parent="." instance=ExtResource("8_sop0g")]

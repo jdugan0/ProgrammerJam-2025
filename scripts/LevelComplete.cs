@@ -8,8 +8,12 @@ public partial class LevelComplete : Area2D
         GD.Print("hi");
         if (body is Movement)
         {
-            SceneSwitcher.instance.SwitchScene("level_manager");
-            GameManager.instance.levelUnlocked += 1;
+            ((CanvasLayer)GetTree().GetNodesInGroup("WinMenu")[0]).Visible = true;
+            GetTree().Paused = true;
+            if (GameManager.instance.levelUnlocked == GameManager.instance.currentLevelID)
+            {
+                GameManager.instance.levelUnlocked += 1;
+            }
         }
     }
 }
