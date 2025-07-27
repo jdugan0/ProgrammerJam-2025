@@ -6,7 +6,7 @@ public partial class Hazard : Area2D
     [Export] public bool topDown = false;
     public void OnCol(Node2D node)
     {
-        GD.Print("HI");
+        // GD.Print("HI");
         if (GameManager.instance.GetMovementState() == Movement.MovementState.TOP && topDown && node is Movement)
         {
             node.QueueFree();

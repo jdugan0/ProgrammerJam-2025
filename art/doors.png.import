@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk157xse5xhnt"
-path="res://.godot/imported/ship_innards.png-72e3ce851a4c34080a51a1f97e45f150.ctex"
+uid="uid://dwh2l87o6hdxm"
+path="res://.godot/imported/doors.png-d43768f8defd2b86035c532dc616350e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ship_innards.png"
-dest_files=["res://.godot/imported/ship_innards.png-72e3ce851a4c34080a51a1f97e45f150.ctex"]
+source_file="res://art/doors.png"
+dest_files=["res://.godot/imported/doors.png-d43768f8defd2b86035c532dc616350e.ctex"]
 
 [params]
 

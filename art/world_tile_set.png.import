@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk157xse5xhnt"
-path="res://.godot/imported/ship_innards.png-72e3ce851a4c34080a51a1f97e45f150.ctex"
+uid="uid://h2vy8egwn6vy"
+path="res://.godot/imported/world_tile_set.png-cd7c0025549e29467879990a9253fbd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ship_innards.png"
-dest_files=["res://.godot/imported/ship_innards.png-72e3ce851a4c34080a51a1f97e45f150.ctex"]
+source_file="res://art/world_tile_set.png"
+dest_files=["res://.godot/imported/world_tile_set.png-cd7c0025549e29467879990a9253fbd5.ctex"]
 
 [params]
 

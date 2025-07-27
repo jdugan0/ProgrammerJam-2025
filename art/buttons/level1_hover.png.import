@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk157xse5xhnt"
-path="res://.godot/imported/ship_innards.png-72e3ce851a4c34080a51a1f97e45f150.ctex"
+uid="uid://dvuddqqk47hu7"
+path="res://.godot/imported/level1_hover.png-f14e080c35d7c55c65aea88762e2c1e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ship_innards.png"
-dest_files=["res://.godot/imported/ship_innards.png-72e3ce851a4c34080a51a1f97e45f150.ctex"]
+source_file="res://art/buttons/level1_hover.png"
+dest_files=["res://.godot/imported/level1_hover.png-f14e080c35d7c55c65aea88762e2c1e6.ctex"]
 
 [params]
 
