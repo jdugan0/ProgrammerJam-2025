@@ -7,6 +7,8 @@ public partial class GameManager : Node
     public Movement player;
     [Export] public int levelUnlocked = 1;
     public string currentLevel;
+    public string[] levels;
+    public int currentLevelID;
     public override void _Ready()
     {
         instance = this;
@@ -31,6 +33,18 @@ public partial class GameManager : Node
     public void RestartLevel()
     {
         SceneSwitcher.instance.SwitchScene(currentLevel);
+    }
+
+    public void ChooseLevel(int level)
+    {
+        SceneSwitcher.instance.SwitchScene(levels[level - 1]);
+		currentLevel = levels[level - 1];
+		currentLevelID = level;
+    }
+
+    public void NextLevel()
+    {
+        ChooseLevel(currentLevelID + 1);
     }
 
     public void Pause()

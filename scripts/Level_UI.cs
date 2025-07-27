@@ -9,6 +9,7 @@ public partial class Level_UI : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GameManager.instance.levels = levels;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,8 +19,7 @@ public partial class Level_UI : Control
 
 	public void ChooseLevel(int level)
 	{
-		SceneSwitcher.instance.SwitchScene(levels[level - 1]);
-		GameManager.instance.currentLevel = levels[level - 1];
+		GameManager.instance.ChooseLevel(level);
 	}
 	public void Back()
 	{

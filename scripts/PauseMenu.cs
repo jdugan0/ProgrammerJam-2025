@@ -12,4 +12,8 @@ public partial class PauseMenu : CanvasLayer
         GameManager.instance.Pause();
         SceneSwitcher.instance.SwitchScene("MainMenu");
     }
+    public void NextLevel()
+    {
+        GameManager.instance.NextLevel();
+    }
 }
