@@ -1,0 +1,89 @@
+[gd_scene load_steps=14 format=4 uid="uid://b2xnfsup5otdx"]
+
+[ext_resource type="Texture2D" uid="uid://cbgmu28ylsd87" path="res://art/spacex4.png" id="1_nkn58"]
+[ext_resource type="Script" uid="uid://btu2bp3xjtev8" path="res://scripts/ScrollTexture.cs" id="2_omtue"]
+[ext_resource type="PackedScene" uid="uid://ddjwefcttragw" path="res://Scenes/Player.tscn" id="3_502ae"]
+[ext_resource type="TileSet" uid="uid://b7hm63ulfp8yp" path="res://resources/walls_complete.tres" id="4_8lc8g"]
+[ext_resource type="PackedScene" uid="uid://e8i4w5kls3ae" path="res://Scenes/Platform.tscn" id="5_g654w"]
+[ext_resource type="PackedScene" uid="uid://blcd63lvr3qhs" path="res://Scenes/Spike.tscn" id="6_7rby4"]
+[ext_resource type="PackedScene" uid="uid://drmxd2de6bhfh" path="res://Scenes/PhysicsObjectGravity.tscn" id="8_ho2ld"]
+[ext_resource type="PackedScene" uid="uid://rxe7kc5dmt1x" path="res://Scenes/LevelComplete.tscn" id="9_wnrsi"]
+[ext_resource type="PackedScene" uid="uid://bq8dwd2ddlih6" path="res://Scenes/PauseMenu.tscn" id="10_q18nk"]
+[ext_resource type="PackedScene" uid="uid://d2u47531xwgv5" path="res://Scenes/WinMenu.tscn" id="11_gj5c7"]
+[ext_resource type="PackedScene" path="res://Scenes/door.tscn" id="11_nkn58"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_safpt"]
+resource_name = "Spike"
+scenes/1/scene = ExtResource("6_7rby4")
+
+[sub_resource type="TileSet" id="TileSet_gjl0y"]
+tile_size = Vector2i(120, 120)
+sources/0 = SubResource("TileSetScenesCollectionSource_safpt")
+
+[node name="Level" type="Node2D"]
+
+[node name="Door" parent="." instance=ExtResource("11_nkn58")]
+position = Vector2(2845, 602)
+
+[node name="Background" type="Sprite2D" parent="." node_paths=PackedStringArray("player")]
+z_index = -20
+texture_repeat = 2
+position = Vector2(1280, 720)
+texture = ExtResource("1_nkn58")
+script = ExtResource("2_omtue")
+parallax = 1.0
+player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("3_502ae")]
+position = Vector2(2885, 659)
+
+[node name="Level" type="TileMapLayer" parent="."]
+z_index = -10
+position = Vector2(0, 240)
+tile_map_data = PackedByteArray("AAAXAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAZAAgAAAAAAAAAAAAZAAkAAAAAAAAAAAAYAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAXAAAAAQABAAAAAAAXAAEAAQABAAEAAAAYAAAAAQAAAAAAAAAYAAEAAQAAAAEAAAAZAAAAAQABAAAAAAAZAAEAAQABAAEAAAAYAAIAAQAEAAAAAAAYAAMAAQAEAAEAAAAZAAIAAQAFAAAAAAAZAAMAAQAFAAEAAAAYAAQAAAAAAAAAAAAYAAUAAAAAAAAAAAAZAAQAAQABAAAAAAAZAAUAAQABAAEAAAAYAAYAAAAAAAAAAAAYAAcAAAAAAAAAAAAZAAYAAQABAAAAAAAZAAcAAQABAAEAAAAXAAYAAAAAAAAAAAAXAAcAAAAAAAAAAAAXAAQAAAAAAAAAAAAXAAUAAAAAAAAAAAAXAAIAAQABAAAAAAAXAAMAAQABAAEAAAAaAAgAAAAAAAAAAAAaAAkAAAAAAAAAAAAbAAkAAAAAAAAAAAAcAAkAAAAAAAAAAAAdAAkAAAAAAAAAAAAeAAkAAAAAAAAAAAAfAAkAAAAAAAAAAAAbAAgAAAAAAAAAAAAcAAgAAAAAAAAAAAAdAAgAAAAAAAAAAAAeAAgAAAAAAAAAAAAfAAgAAAAAAAAAAAAaAAAAAQAAAAAAAAAaAAEAAQAAAAEAAAAbAAAAAQABAAAAAAAbAAEAAQABAAEAAAAaAAIAAQAAAAAAAAAaAAMAAQAAAAEAAAAbAAIAAQABAAAAAAAbAAMAAQABAAEAAAAaAAQAAQAAAAAAAAAaAAUAAQAAAAEAAAAbAAQAAQABAAAAAAAbAAUAAQABAAEAAAAaAAYAAQAAAAAAAAAaAAcAAQAAAAEAAAAbAAYAAQABAAAAAAAbAAcAAQABAAEAAAAcAAYAAAAAAAAAAAAcAAcAAAAAAAAAAAAdAAcAAAAAAAAAAAAfAAYAAAAAAAAAAAAfAAcAAAAAAAAAAAAfAAMAAAAAAAAAAAAfAAQAAAAAAAAAAAAcAAIAAwAAAAAAAAAcAAMAAwAAAAEAAAAcAAAAAQAEAAAAAAAcAAEAAQAEAAEAAAAdAAAAAwAAAAAAAAAcAAQAAwAAAAMAAAAcAAUAAQAEAAAAAAAfAAAAAAAAAAAAAAAdAAYAAAAAAAAAAAAeAAYAAAAAAAAAAAAdAAQAAwABAAMAAAAdAAMAAgAAAAAAAQAdAAEAAwAAAAIAAAAdAAIAAwAFAAIAAAAeAAAAAAAAAAAAAAAfAAUAAAAAAAAAAAAeAAQAAwACAAMAAAAeAAMAAgAAAAAAAQAeAAIAAgAAAAAAAQAeAAEAAgAAAAAAAQAfAAEAAwADAAAAAAAeAAcAAAAAAAAAAAAfAAIAAAAAAAAAAAAeAAUAAQAEAAAAAAAXAP7/AAAAAAAAAAAYAP7/AAAAAAAAAAAZAP7/AAAAAAAAAAAaAP7/AAAAAAAAAAAbAP7/AAAAAAAAAAAcAP7/AAAAAAAAAAAdAP7/AAAAAAAAAAAeAP7/AAAAAAAAAAAfAP7/AAAAAAAAAAAfAP//AAAAAAAAAAAXAP//AQABAAEAAAAdAP//AQABAAEAAAAeAP//AAAAAAAAAAAbAP//AQABAAEAAAAcAP//AQAAAAEAAAAZAP//AQABAAEAAAAaAP//AQAAAAEAAAAYAP//AQAAAAEAAAAdAAUAAQAEAAAAAAAWAP7/AAAAAAAAAAAWAP//AAAAAAAAAAAWAAAAAAAAAAAAAAAWAAEAAAAAAAAAAAAWAAIAAAAAAAAAAAAWAAMAAAAAAAAAAAAWAAQAAAAAAAAAAAAWAAUAAAAAAAAAAAAWAAYAAAAAAAAAAAAWAAcAAAAAAAAAAAAWAAgAAAAAAAAAAAAWAAkAAAAAAAAAAAA=")
+tile_set = ExtResource("4_8lc8g")
+
+[node name="Decoration" type="TileMapLayer" parent="."]
+z_index = -9
+tile_map_data = PackedByteArray("AAAZAAYABgAEAAIAAAAZAAUABgAEAAEAAAAZAAQABgAEAAAAAAAYAAQABgADAAIAAAAXAAQABgACAAIAAAAXAAMABgAFAAEAAAAYAAMABgADAAAAAAAZAAMABgAFAAAAAAAdAAEABgAAAAEAAAAcAAEABgAAAAEAAAAcAAgAAAAAAAAAAAA=")
+tile_set = ExtResource("4_8lc8g")
+
+[node name="Platforms" type="Node2D" parent="."]
+position = Vector2(0, 240)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("5_g654w")]
+position = Vector2(3001, 591)
+
+[node name="Spikes" type="TileMapLayer" parent="."]
+z_index = -1
+position = Vector2(0, 240)
+tile_map_data = PackedByteArray("AAAZAAcAAAAAAAAAAQAaAAcAAAAAAAAAAQAbAAcAAAAAAAAAAQAeAAUAAAAAAAAAAQAdAAUAAAAAAAAAAQAcAAUAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_gjl0y")
+
+[node name="Objects" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(0, 240)
+
+[node name="PhysicsObject2" parent="Objects" instance=ExtResource("8_ho2ld")]
+position = Vector2(3245, 552)
+
+[node name="PhysicsObject3" parent="Objects" instance=ExtResource("8_ho2ld")]
+position = Vector2(3276, 449)
+
+[node name="LevelComplete" parent="." instance=ExtResource("9_wnrsi")]
+position = Vector2(3780, 420)
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_q18nk")]
+
+[node name="WinMenu" parent="." instance=ExtResource("11_gj5c7")]
+
+[connection signal="body_entered" from="Level/Pit" to="Level/Pit" method="OnCol"]
+[connection signal="body_entered" from="Level/@Area2D@70094" to="Level/@Area2D@70094" method="OnCol"]
+[connection signal="body_entered" from="Level/@Area2D@70095" to="Level/@Area2D@70095" method="OnCol"]
+[connection signal="body_entered" from="Level/@Area2D@70096" to="Level/@Area2D@70096" method="OnCol"]
+[connection signal="body_entered" from="Spikes/Pit" to="Spikes/Pit" method="OnCol"]
+[connection signal="body_entered" from="Spikes/@Area2D@70097" to="Spikes/@Area2D@70097" method="OnCol"]
+[connection signal="body_entered" from="Spikes/@Area2D@70098" to="Spikes/@Area2D@70098" method="OnCol"]
+[connection signal="body_entered" from="Spikes/@Area2D@70099" to="Spikes/@Area2D@70099" method="OnCol"]
+[connection signal="body_entered" from="Spikes/@Area2D@70100" to="Spikes/@Area2D@70100" method="OnCol"]
+[connection signal="body_entered" from="Spikes/@Area2D@70101" to="Spikes/@Area2D@70101" method="OnCol"]
